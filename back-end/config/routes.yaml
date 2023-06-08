@@ -1,0 +1,8 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+
+auth:
+    path: /auth
+    methods: ['POST']        

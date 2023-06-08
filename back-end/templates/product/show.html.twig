@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails{% endblock %}
+
+{% block body %}
+   <div class="row">
+        <div class="col-md-5">
+        <img src="{{ asset('uploads/' ~ product.image) }}" class="w-100 border" alt="{{ product.name }}" />
+    </div>
+    <div class="col-md-7 my-auto">
+        <h3>{{ product.name }}</h3>
+            <p>
+                {{ product.description }}
+            </p>
+            <p> 
+                {{ product.category }}
+            </p>
+   
+    <a href="#" class="btn btn-primary">Commander</a>
+    <a href="{{ path('app_product_index') }}">Revenir à la liste</a>
+     </div>
+{% endblock %}
+

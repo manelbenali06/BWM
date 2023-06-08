@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OrderItem {% endblock %}
+
+{% block body %}
+    <h1>OrderItem </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Quantity</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order_item in order_items %}
+            <tr>
+                <td>{{ order_item.id }}</td>
+                <td>{{ order_item.quantity }}</td>
+                <td>
+                    <a href="{{ path('admin_order_item_show', {'id': order_item.id}) }}">show</a>
+                   
+                    <a href="{{ path('admin_order_item_delete', {'id': order_item.id}) }}">supprimer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_order_item_new') }}">Create new</a>
+{% endblock %}

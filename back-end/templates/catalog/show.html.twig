@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails{% endblock %}
+
+{% block body %}
+    <h1>Détails</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ product.name }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ product.category.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ product.price }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>
+                    {% if product.image %}
+                        <img src="{{ asset('uploads/' ~ product.image) }}" class="w-100 border" alt="{{ product.name }}" />
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cart_add', {id: product.id}) }}" class="btn btn-primary">Commander</a>
+{% endblock %}

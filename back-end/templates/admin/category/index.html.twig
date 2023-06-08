@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Catégories{% endblock %}
+
+{% block body %}
+ <div class="container">
+    <h1>Categories</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>
+                    <a href="{{ path('admin_category_show', {'id': category.id}) }}"class="btn btn-primary btn-sm">Show</a>
+                    <a href="{{ path('admin_category_edit', {'id': category.id}) }}"class="btn btn-secondary btn-sm">Edit</a>
+                    <a href="{{ path('admin_category_delete', {'id': category.id}) }}"class="btn btn-danger btn-sm">Delete</a>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_category_new') }}">Create new</a>
+    </div>
+{% endblock %}

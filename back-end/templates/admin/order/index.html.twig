@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Order index{% endblock %}
+
+{% block body %}
+    <h1>Order index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Reference</th>
+                <th>PaidAt</th>
+                <th>PaymentId</th>
+                <th>Amount</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.reference }}</td>
+                <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ order.paymentId }}</td>
+                <td>{{ order.amount }}</td>
+                <td>
+                    <a href="{{ path('admin_order_show', {'id': order.id}) }}">show</a>
+                    <a href="{{ path('admin_order_edit', {'id': order.id}) }}">edit</a>
+                    <a href="{{ path('admin_order_delete', {'id': order.id}) }}">supprimer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_order_new') }}">Create new</a>
+{% endblock %}
