@@ -1,0 +1,24 @@
+
+/* admin-sidebar.css */
+
+.admin-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.admin-sidebar__title {
+    font-weight: bold;
+}
+
+.admin-sidebar__link {
+    color: #000;
+    text-decoration: none;
+}
+
+.admin-sidebar__link:hover {
+    color: #007bff;
+}

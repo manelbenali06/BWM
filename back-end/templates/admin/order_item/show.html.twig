@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}OrderItem{% endblock %}
+{% block title %}Elèment de commande{% endblock %}
 
 {% block body %}
-    <h1>OrderItem</h1>
+    <h1>Elèment de commande</h1>
 
     <table class="table">
         <tbody>
@@ -12,13 +12,13 @@
                 <td>{{ order_item.id }}</td>
             </tr>
             <tr>
-                <th>Quantity</th>
+                <th>Quantité</th>
                 <td>{{ order_item.quantity }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('admin_order_item_index') }}">back to list</a>
+    <a href="{{ path('admin_order_item_index') }}">Revenir à la liste</a>
 
   
 
