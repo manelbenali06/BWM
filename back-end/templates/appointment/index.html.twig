@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rendez vous{% endblock %}
+
+{% block body %}
+    <h1>Rendez-vous</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Nom du client</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for appointment in appointments %}
+            <tr>
+                <td>{{ appointment.id }}</td>
+                <td>{{ appointment.date|date('d/m/Y') }}</td>
+                <td>{{ appointment.clientName }}</td>
+                <td>
+                    <a href="{{ path('appointment_index', {'id': appointment.id}) }}"class="btn btn-primary btn-sm">Regarder</a>
+                    <a href="{{ path('appointment_create', {'id': appointment.id}) }}"class="btn btn-secondary btn-sm">Modifier</a>
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('appointment_create') }}"class="btn btn-success">Créer un nouveau rendez vous</a>
+    </div>
+{% endblock %}
