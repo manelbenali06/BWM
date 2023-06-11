@@ -22,3 +22,19 @@
 .admin-sidebar__link:hover {
     color: #007bff;
 }
+
+/* PAGE BROWS*/
+
+body {
+    background-color: #f8f9fa;
+}
+.custom-container {
+    margin-top: 50px;
+}
+.custom-image {
+    height: 500px;
+    object-fit: cover;
+}
+.custom-thumbnail {
+    margin-bottom: 20px;
+}
