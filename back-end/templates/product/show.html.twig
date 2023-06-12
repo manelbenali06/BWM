@@ -1,23 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Détails{% endblock %}
+{% block title %}BROWS -Brows With Manel{% endblock %}
 
 {% block body %}
-   <div class="row">
-        <div class="col-md-5">
-        <img src="{{ asset('uploads/' ~ product.image) }}" class="w-100 border" alt="{{ product.name }}" />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="produit pt-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="col">
+                            <div class="card h-100 border-0">
+                                <!-- Image du produit -->
+                                <img src="{{ asset('uploads/' ~ product.image) }}" class="card-img-top" alt="{{ product.name }}">
+                                <div class="card-body text-center">
+                                    <!-- Titre du produit -->
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <!-- Catégorie du produit -->
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ product.category }}</h6>
+                                    <!-- Prix du produit -->
+                                    <span class="product-price">{{ (product.price)|number_format(2, ',', '.') }} €</span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-md-6 text-center pt-5">
+                        <div class="pricing">
+                            <h5 class="pricing-item">{{ product.description }}</h5>
+                            </div>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-7 my-auto">
-        <h3>{{ product.name }}</h3>
-            <p>
-                {{ product.description }}
-            </p>
-            <p> 
-                {{ product.category }}
-            </p>
-   
-    <a href="#" class="btn btn-primary">Commander</a>
-    <a href="{{ path('app_product_index') }}">Revenir à la liste</a>
-     </div>
+    <div class="card-footer text-center">
+        <!-- Bouton "Details" -->
+        <a href="{{ path('app_product_index', {'id': product.id}) }}" class="btn">Retours à la liste</a>
+        <!-- Bouton "Ajouter au panier" -->
+        <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn">Ajouter au panier</a>
+    </div>
+</div>
 {% endblock %}
-
