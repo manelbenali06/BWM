@@ -1,0 +1,98 @@
+/*Carroussel*/
+
+.image-hover {
+  transition: transform 0.3s ease;
+}
+
+.image-hover:hover {
+  transform: translateX(-10px);
+}
+
+
+/*Deuxieme section*/
+
+  .title {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  .card-text{
+    font-family: Catamaran,sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.7em;
+    letter-spacing: .15em;
+    color: #8e8987;
+  }
+  .subtitle {
+    font-family: Catamaran,sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.7em;
+    letter-spacing: .15em;
+    color: #8e8987;
+    margin-bottom: 60px;
+  }
+
+  .description {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    background-color: #4a4e53;
+    color: #fff;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+  }
+  .btn:hover {
+    border: 1px solid white;
+  }
+
+.btn:active {
+  box-shadow: 4px 4px 12px #c5c5c5,
+              -4px -4px 12px #ffffff;
+  }
+
+/* la troixième section */
+
+
+
+/*  section prestations */
+  h1{
+    font-family: Cormorant,serif;
+    letter-spacing: .01em;
+    color: #363636;
+    font-size: 42px;
+    line-height: 1.1667em;
+    font-weight: 600;
+  }
+.card-title{
+  font-family: Cormorant,serif;
+    letter-spacing: .01em;
+    color: #363636;
+    font-size: 20px;
+    line-height: 1.21em;
+    font-weight: 700;
+}
+
+.card-subtitle {
+  font-family: Catamaran,sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.7em;
+  letter-spacing: .15em;
+  color: #8e8987;
+  margin-bottom: 60px;
+}
