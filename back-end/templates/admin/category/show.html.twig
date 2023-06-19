@@ -18,9 +18,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_category_index') }}">back to list</a>
+    <a href="{{ path('admin_category_index') }}">Revenir à la liste</a>
 
-    <a href="{{ path('admin_category_edit', {'id': category.id}) }}">edit</a>
+    <a href="{{ path('admin_category_edit', {'id': category.id}) }}">modifier</a>
 
     {{ include('admin/category/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,21 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Produits{% endblock %}
+{% block title %}SERVICES -Brows With Manel{% endblock %}
 
 {% block body %}
-    <div class="row pb-5">
+    <div class="row pt-5">
     {% for product in products %}
         <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
+            <div class="card h-100 border-0">
                 <img src="{{ asset('uploads/' ~ product.image) }}" class="card-img-top" alt="{{ product.name }}">
-                <div class="card-body">
+                <div class="card-body text-center">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{ product.category }}</h6>
                     <span class="product-price">{{ (product.price)|number_format(2, ',', '.') }} €</span>
                 </div>
                 <div class="card-footer text-center">
-                    <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn btn-primary btn-sm text-white">Details</a>
-                    <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn btn-primary btn-sm text-white">Ajouter au panier</a>   
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn">Details de la prestation</a>   
                 </div>          
             </div>
         </div>
