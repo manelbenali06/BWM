@@ -26,9 +26,10 @@ constructor(private categoryService: CategoryService){
   // Récupérer les catégories du service et mettre à jour le tableau des categories
 }
 
-ngOnInit(): void{
-  this.categoryService.getCategories().subscribe(apiCategoryResponse => {
-    this.categories = apiCategoryResponse["hydra:member"];
-  });
-}
+  ngOnInit(): void{
+    this.categoryService.getCategories().subscribe(apiCategoryResponse => {
+      this.categories = apiCategoryResponse["hydra:member"];
+    });
+  }
+
 }

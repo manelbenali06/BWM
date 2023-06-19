@@ -4,7 +4,7 @@
       <img [src]="'uploads/' + product.image" class="card-img-top" [alt]="product.name">
       <div class="card-body text-center">
         <h5 class="card-title">{{ product.name }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ product.category }}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{ product.description }}</h6>
         <span class="product-price">{{ product.price | number:'2.2-2' }} €</span>
       </div>
 
