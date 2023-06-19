@@ -58,6 +58,15 @@
   background-color: #0056b3;
 }
 
+/*******HEADER*******/
+.navbar-expand-lg {
+ background-color: #F5F5F5;
+}
+
+/*footer*/
+.container-fluid{
+  background-color: #F5F5F5;
+}
 
 
 /* PAGE Acceuil*/

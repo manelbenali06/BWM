@@ -1,5 +1,9 @@
-import {Category} from"../models/Category";
+import {Category} from"../models/category";
 export interface ApiCategoryResponse {
   "hydra:totalItems": number;
   "hydra:member": Category[]
+
+  data: {
+    categories: string;
+  };
 }
