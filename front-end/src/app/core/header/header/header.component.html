@@ -1,0 +1,54 @@
+<header class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Brows with Manel's</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products">Nos prestations</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Informations
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/brows">BROWS</a></li>
+            <li><a class="dropdown-item" routerLink="/lips">LIPS</a></li>
+            <li><a class="dropdown-item" routerLink="/freckless">FRECKLESS</a></li>
+            <li><a class="dropdown-item" routerLink="/nails">NAILS</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Panier</a>
+        </li>
+        <li class="nav-item" *ngIf="checkIsAdmin()">
+          <a class="nav-link" routerLink="/admin">Administrateur</a>
+        </li>
+        <li class="nav-item" *ngIf="user">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ user.email }}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/profile">Mon profil</a></li>
+            <li><a class="dropdown-item" routerLink="/logout">Se déconnecter</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" *ngIf="!user">
+          <a class="nav-link" routerLink="/login">S'identifier</a>
+        </li>
+        <li class="nav-item" *ngIf="!user">
+          <a class="nav-link" routerLink="/register">S'enregistrer</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

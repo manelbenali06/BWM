@@ -1,32 +1,181 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bienvenue{% endblock %}
+{% block title %}Brows with Manel -Studio de beauté{% endblock %}
 
 {% block body %}
-    <div class="example-wrapper">
-        <h1>Bienvenue</h1>
-        <p>
-            Bienvenue chez Manel's Beauty, votre destination en ligne pour les prestations de beauté les plus
-            exclusives. Nous sommes une entreprise spécialisée dans la beauté et nous offrons une gamme complète de
-            services pour vous aider à vous sentir et à paraître votre meilleur.
-        </p>
-        </p>
-        Nous proposons une grande variété de prestations de beauté, des soins de la peau aux services de maquillage et
-        de coiffure, pour répondre à tous vos besoins en matière de beauté. Nos professionnels sont hautement qualifiés
-        et formés pour vous fournir des prestations exceptionnelles, dans un environnement confortable et relaxant.
-        </p>
-        <p>
-        Chez Manel's Beauty, nous savons que chaque client est unique, c'est pourquoi nous proposons des prestations sur
-        mesure pour répondre à vos besoins individuels. Nous utilisons des produits de qualité supérieure pour garantir
-        des résultats exceptionnels à chaque fois.
-        </p>
-        <p>
-        Naviguez sur notre site pour découvrir notre gamme de prestations de beauté et nos offres spéciales en cours.
-        Prenez rendez-vous dès maintenant pour une expérience de beauté personnalisée et luxueuse chez Manel's Beauty.
-        </p>
-        <p>
-        Merci d'avoir choisi Manel's Beauty pour vos besoins en matière de beauté. Nous sommes impatients de vous voir
-        bientôt !
-        </p>
+<div class="container">
+  <div class="carroussel pt-5">
+    <div class="row">
+      <div class="col-lg-6">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{{ asset('assets/images/caroussel/2.webp') }}" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ asset('assets/images/caroussel/car.jpeg') }}" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ asset('assets/images/caroussel/2.webp') }}" class="d-block w-100" alt="Image 3">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="row img-carre">
+          <div class="col-6">
+            <img src="{{ asset('assets/images/caroussel/1.webp') }}" alt="Image 4" class="img-fluid rounded image-hover">
+          </div>
+        <div class="col-6">
+          <img src="{{ asset('assets/images/caroussel/photo.jpeg') }}" alt="Image 5" class="img-fluid rounded image-hover">
+        </div>
+        <div class="col-6 pt-4">
+          <img src="{{ asset('assets/images/caroussel/photo.jpeg') }}" alt="Image 6" class="img-fluid rounded image-hover">
+        </div>
+        <div class="col-6 pt-4">
+          <img src="{{ asset('assets/images/caroussel/1.webp') }}" alt="Image 7" class="img-fluid rounded image-hover">
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- Deuxieme container -->
+  <div class="rendez-vous pt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{ asset('assets/images/Acceuil/couleurs.jpg') }}" class="img-fluid" alt="...">
+      </div>
+      <div class="col-md-6 d-flex align-items-center">
+        <div class="card-body">
+          <h5 class="card-title">BWM STUDIO - LIPS & BROWS EXPERT</h5>
+          <p class="card-text">Le studio beauté BWM.</p>
+          <p class="card-text-text">Une forme de sourcils mal définie, une bouche trop fine des asymétries, des tempes dégarnies ou une calvitie naissante : il est aujourd'hui possible de corriger toutes ces imperfections grâce à nos techniques professionnelles signées BWM.</p>
+          <div class="text-center pt-5">
+            <a href="{{ path('app_product_index') }}" class="btn">Découvrir toutes les prestations</a>
+          </div>
+            <p class="card-text pt-5"><small class="text-muted">Mis à jour 3 min avant</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Troixieme container -->
+  <div class="prestation pt-5">
+    <div class="row">
+        <div class=" col-12 d-flex align-items-center justify-content-center">
+            <h1 class="haut">Retrouvez nos techniques professionnelles</h1>
+        </div>
+        <div class=" card col-12 col-md-3 border-0">
+          <img src="{{ asset('assets/images/sections/04.png') }}" alt="Image 1" class="card-img-top">
+              <div class="card-body text-center">
+                <h5 class="card-subtitle text-center">BLUSH LIPS & DARK LIPS</h5>
+                <h4 class="card-title">Lips Artist</h4>
+                <a class="btn" href="{{ path('lips_page') }}">+ D'INFOS</a>
+              </div>
+        </div>
+        <div class="card col-12 col-md-3 border-0">
+          <img src="{{ asset('assets/images/sections/03.png') }}" alt="Image 2" class="card-img-top">
+          <div class="card-body text-center">
+            <h5 class="card-subtitle text-center">OMBRE POWDER</h5>
+            <h4 class="card-title">Brows Artist</h4>
+            <a class="btn" href="{{ path('brows_page') }}">+ D'INFOS</a>
+          </div>
+        </div>
+        <div class="card col-12 col-md-3 border-0">
+          <img src="{{ asset('assets/images/sections/05.png') }}" alt="Image 3" class="card-img-top">
+          <div class="card-body text-center">
+            <h5 class="card-subtitle text-center">BEAUTÉ DES ONGLES</h5>
+            <h4 class="card-title">Nails</h4>
+            <a class="btn" href="{{ path('freckless_page') }}">+ D'INFOS</a>
+          </div>
+        </div>
+        <div class="card col-12 col-md-3 border-0">
+          <img src="{{ asset('assets/images/sections/06.png') }}" alt="Image 4" class="card-img-top">
+          <div class="card-body text-center">
+            <h5 class="card-subtitle text-center">TÂCHES DE ROUSSEURS</h5>
+            <h4 class="card-title">Fake Freckles</h4>
+            <a class="btn" href="{{ path('freckless_page') }}">+ D'INFOS</a>
+          </div>
+        </div>
+    </div>
+  </div> 
+  <!-- Quatrieme container -->
+  <div class="salon pt-5">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{{ asset('assets/images/Acceuil/salon.jpg') }}" class="img-fluid" alt="...">
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+          <div class="card-body">
+            <h5 class="card-title">BWM STUDIO - LA BEAUTÉ PARISIENNE</h5>
+            <p class="card-text">Bienvenue</p>
+            <p class="card-text-text"><i class="fas fa-map-marker-alt"></i> 66 Rue danielle casanova, 93200 Saint-denis</p>
+            <p class="card-text-text"><i class="fas fa-clock"></i> Horaires d'ouvertures : de 11h à 19h</p>
+            <p class="card-text-text"><i class="fas fa-phone"></i> 𝟢𝟩.53.05.90.66</p>
+            <p class="card-text-text"><i class="fas fa-envelope"></i> contact@browswithmanel.fr</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row pt-5 pb-5">
+      <div class="card col-md-4 border-0">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ asset('assets/images/icons/icone-bwk-04.png') }}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Produits de qualité.</h5>
+              <p class="card-text">Toutes nos prestations sont réalisées avec les meilleurs produits professionnels.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="card col-md-4 border-0">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ asset('assets/images/icons/icone-bwk-03.png') }}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Equipe smile et love</h5>
+              <p class="card-text">Redonner le sourire à nos clients en leur faisant disparaître leurs complexes est notre passion.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="card col-md-4 border-0">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ asset('assets/images/icons/icone-bwk-02.png') }}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Diplômé à l'international</h5>
+              <p class="card-text">Nos praticiens ont plus d'une dizaine de formations à leur actif.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</body>
+</html>
+
 {% endblock %}

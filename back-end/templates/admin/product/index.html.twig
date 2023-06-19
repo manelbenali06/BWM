@@ -4,14 +4,14 @@
 
 {% block body %}
 <div class="container">
-    <h1>Product index</h1>
+    <h1>Produits</h1>
 
     <table class="table">
         <thead class="thead-dark">
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Price</th>
+                <th>Nom</th>
+                <th>Prix</th>
                 <th>Image</th>
                 <th>Actions</th>
             </tr>
@@ -28,19 +28,19 @@
                     {% endif %}
                 </td>
                 <td>
-                    <a href="{{ path('admin_product_show', {'id': product.id}) }}" class="btn btn-primary btn-sm">Show</a>
-                    <a href="{{ path('admin_product_edit', {'id': product.id}) }}" class="btn btn-secondary btn-sm">Edit</a>
-                    <a href="{{ path('admin_product_delete', {'id': product.id}) }}" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="{{ path('admin_product_show', {'id': product.id}) }}" class="btn btn-primary btn-sm">Regarder</a>
+                    <a href="{{ path('admin_product_edit', {'id': product.id}) }}" class="btn btn-secondary btn-sm">Modifier</a>
+                    <a href="{{ path('admin_product_delete', {'id': product.id}) }}" class="btn btn-danger btn-sm">Supprimer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">No records found</td>
+                <td colspan="5">Aucun produit</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('admin_product_new') }}" class="btn btn-success">Create new</a>
+    <a href="{{ path('admin_product_new') }}" class="btn btn-success">Créer un nouveau produit</a>
 </div>
 {% endblock %}

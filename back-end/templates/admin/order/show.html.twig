@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Order{% endblock %}
+{% block title %}Commande{% endblock %}
 
 {% block body %}
-    <h1>Order</h1>
+    <h1>Commande</h1>
 
     <table class="table">
         <tbody>
@@ -16,23 +16,23 @@
                 <td>{{ order.reference }}</td>
             </tr>
             <tr>
-                <th>PaidAt</th>
+                <th>Payé le:</th>
                 <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>PaymentId</th>
+                <th>PayementId</th>
                 <td>{{ order.paymentId }}</td>
             </tr>
             <tr>
-                <th>Amount</th>
+                <th>Montant de la commande</th>
                 <td>{{ order.amount }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('admin_order_index') }}">back to list</a>
+    <a href="{{ path('admin_order_index') }}">Revenir à la liste</a>
 
-    <a href="{{ path('admin_order_edit', {'id': order.id}) }}">edit</a>
+    <a href="{{ path('admin_order_edit', {'id': order.id}) }}">Modifier</a>
 
     {{ include('admin/order/_delete_form.html.twig') }}
 {% endblock %}
