@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Payment{% endblock %}
+
+{% block body %}
+<script>
+    (function() {
+        const stripe = Stripe("{{ publicKey }}");
+        stripe.redirectToCheckout({
+            sessionId: "{{ sessionId }}"
+        });
+    })();
+</script>
+{% endblock %}
