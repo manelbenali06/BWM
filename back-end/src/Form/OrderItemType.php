@@ -17,7 +17,7 @@ class OrderItemType extends AbstractType
                 ->add('product', TextType::class, [
                 'label' => 'Nom du produit'
         ])
-            ->add('purchase')
+            ->add('order')
         ;
     }
 

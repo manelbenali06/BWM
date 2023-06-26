@@ -56,7 +56,7 @@ class PaymentController extends AbstractController
             $product = $productRepository->find($productId);
             $orederItem->setProduct($product);
             $orederItem->setQuantity($item['quantity']);
-            $orederItem->setPurchase($order);
+            $orederItem->setOrder($order);
             $entityManager->persist($orederItem);
         }
         $entityManager->flush();

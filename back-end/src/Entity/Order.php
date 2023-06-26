@@ -18,19 +18,19 @@ class Order
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $reference = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $paidAt = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $paymentId = null;
 
     #[ORM\Column]
     private ?float $amount = null;
 
-    #[ORM\OneToMany(mappedBy: 'purchase', targetEntity: OrderItem::class)]
+    #[ORM\OneToMany(mappedBy: 'order', targetEntity: OrderItem::class)]
     private Collection $orderItems;
 
     #[ORM\ManyToOne(inversedBy: 'orders')]
@@ -106,7 +106,7 @@ class Order
     {
         if (!$this->orderItems->contains($orderItem)) {
             $this->orderItems->add($orderItem);
-            $orderItem->setPurchase($this);
+            $orderItem->setOrder($this);
         }
 
         return $this;
@@ -116,8 +116,8 @@ class Order
     {
         if ($this->orderItems->removeElement($orderItem)) {
             // set the owning side to null (unless already changed)
-            if ($orderItem->getPurchase() === $this) {
-                $orderItem->setPurchase(null);
+            if ($orderItem->getOrder() === $this) {
+                $orderItem->setOrder(null);
             }
         }
 
