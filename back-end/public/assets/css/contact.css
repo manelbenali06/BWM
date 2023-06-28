@@ -1,0 +1,8 @@
+/*   Carroussel   */
+
+.image-hover {
+    transition: transform 0.3s ease;
+  }
+  .image-hover:hover {
+    transform: translateX(-10px);
+  }

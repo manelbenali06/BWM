@@ -10,6 +10,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CartController extends AbstractController
 {
+    
+
     /**
      * @Route("/cart", name="app_cart_index")
      */
@@ -47,4 +49,6 @@ class CartController extends AbstractController
         $cartService->clear();
         return $this->redirectToRoute('app_cart_index');
     }
+   
+
 }
