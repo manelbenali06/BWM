@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Elèments de commande {% endblock %}
+
+{% block body %}
+    <h1>Elèments de commande </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+               
+                <th>Quantités commandés</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+        {% for order_item in order_items %}
+            <tr>
+    
+                <td>{{ order_item.quantity }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun element de commande</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_home') }}"class="btn btn-success">Retour à l'acceuil</a>
+{% endblock %}

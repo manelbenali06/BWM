@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block body %}
+    <h1>Commande</h1>
+
+    <table class="table">
+        <thead>
+            <tr>  
+                <th>Reference</th>
+                <th>Payé le:</th>
+                <th>Montant de la commande</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.reference }}</td>
+                <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ order.amount }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune commande</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_home') }}"class="btn btn-success">Retour à l'acceuil</a>
+{% endblock %}
