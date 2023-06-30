@@ -1,0 +1,62 @@
+/*container panier*/
+
+.panier-body{
+  padding: 20px;
+}
+/* CSS pour les cartes */
+
+.panier-card.small-card {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  max-width: 300px;
+}
+
+.panier-card img.card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.panier-card .card-body {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.panier-card .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.panier-card .card-text-text {
+  font-size: 16px;
+  text-transform: none;
+}
+
+.panier-card .btn {
+  margin-top: 10px;
+}
+
+/* CSS pour le conteneur du panier */
+
+
+/* CSS pour le bouton de retour à l'accueil */
+.btn-retour {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+}
+
+ /* image*/
+.panier-card img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+ 

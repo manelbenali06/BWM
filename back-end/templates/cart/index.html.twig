@@ -3,31 +3,29 @@
 {% block title %}Panier{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1 class="text-center">Panier</h1>
-
-        {% if cart|length > 0 %}
-            <div class="cart-actions">
-                <a href="{{ path('app_cart_clear') }}" class="btn btn-danger">Tout supprimer</a>
-                <a href="{{ path('app_payment_redirect') }}" class="btn btn-primary">Valider et payer</a>
-            </div>
-        {% endif %}
-
-        <div class="row">
+        <div class="row panier-body justify-content-center align-items-center">
             {% for item in cart %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-4 d-flex">
+                    <div class="panier-card small-card">
                         {% if item.product.image %}
-                            <img src="{{ asset('uploads/' ~ item.product.image) }}" class="card-img-top" alt="{{ item.product.name }}">
+                            <img src="{{ asset('uploads/' ~ item.product.image) }}" class=" w-100" alt="{{ item.product.name }}">
                         {% endif %}
-                        <div class="card-body">
-                            <h5 class="card-title">{{ item.product.name }}</h5>
-                            <p class="card-text">Price: {{ item.product.price }}</p>
-                            <p class="card-text">Quantity: {{ item.quantity }}</p>
-                            <a href="{{ path('app_product_show', {'id': item.product.id}) }}" class="btn btn-secondary">Show</a>
-                            <a href="{{ path('app_cart_add', {'id': item.product.id}) }}" class="btn btn-success">Add</a>
-                            <a href="{{ path('app_cart_delete', {'id': item.product.id}) }}" class="btn btn-danger">Delete</a>
+                        <div class="panier card-body">
+                            <h5 class="panier card-title">{{ item.product.name }}</h5>
+                            <p class="panier card-text">Price: {{ item.product.price }}</p>
+                            <p class="panier card-text">Quantity: {{ item.quantity }}</p>
+                            <a href="{{ path('app_cart_clear') }}" class="btn">Annuler</a>
+                            <a href="{{ path('app_payment_redirect') }}" class="btn">Valider</a>
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <div class="panier-card">
+                        {% if cart|length > 0 %}
+                            <div class="cart-actions">
+                                <p class="panier card-text-text">Description: <br>{{ item.product.description }}</p>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             {% else %}
@@ -35,8 +33,10 @@
                     <p class="text-center">No records found</p>
                 </div>
             {% endfor %}
+            <div class="text-center">
+            <a href="{{ path('app_home') }}" class="btn">Retour à l'acceuil</a>
+            </div>
         </div>
-    </div>
 {% endblock %}
 
    
