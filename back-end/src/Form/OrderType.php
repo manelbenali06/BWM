@@ -23,15 +23,12 @@ class OrderType extends AbstractType
                 'attr' => ['placeholder' => 'Entrez le numéro de référence']
             ])
             ->add('paidAt', DateTimeType::class, [
-                'label' => 'Date de paiement',
-                'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd HH:mm:ss'
+                   
+                'html5' => false,
+                'format' => 'yyyy-MM-dd HH:mm:ss',       
+                'attr' => ['placeholder' => 'Enter the paidAt'],
             ])
-            ->add('paidAt', DateTimeType::class, [
-                'label' => 'Date de paiement',
-                'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd HH:mm:ss'
-            ])
+        
             ->add('amount', MoneyType::class, [
                 'label' => 'Montant',
                 'currency' => 'EUR'

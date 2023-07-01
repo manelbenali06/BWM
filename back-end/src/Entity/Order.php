@@ -22,7 +22,7 @@ class Order
     private ?string $reference = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $paidAt = null;
+    private ?\DateTime $paidAt = null;
 
     #[ORM\Column(length: 50)]
     private ?string $paymentId;
@@ -58,12 +58,12 @@ class Order
         return $this;
     }
 
-    public function getPaidAt(): ?\DateTimeImmutable
+    public function getPaidAt(): ?\DateTime
     {
         return $this->paidAt;
     }
 
-    public function setPaidAt(\DateTimeImmutable $paidAt): self
+    public function setPaidAt(\DateTime $paidAt): self
     {
         $this->paidAt = $paidAt;
 

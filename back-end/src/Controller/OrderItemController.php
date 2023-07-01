@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller;
 
 use App\Repository\OrderItemRepository;
 use Symfony\Component\HttpFoundation\Response;
