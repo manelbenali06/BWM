@@ -25,7 +25,7 @@ class Order
     private ?\DateTimeImmutable $paidAt = null;
 
     #[ORM\Column(length: 50)]
-    private ?string $paymentId = null;
+    private ?string $paymentId;
 
     #[ORM\Column]
     private ?float $amount = null;

@@ -1,8 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PaymentController!{% endblock %}
+{% block title %}Confirmation de paiement{% endblock %}
 
 {% block body %}
-    <h1>Paiement réussi !</h1>
+     <div class="payment-details">
+       <h2>Confirmation de commande</h2>
+    <p>
+        Bonjour
+        Nous vous remercions pour votre commande
+        Une confirmation vient de vous être envoyée par email à l'adresse
+
     <a href="{{ path('app_home') }}" class="btn btn-primary">Revenir a la page d'accueil</a>
 {% endblock %}

@@ -8,6 +8,7 @@
     <table class="table">
         <thead>
             <tr>  
+            <th>   Reference</th>
                 <th>Reference</th>
                 <th>Payé le:</th>
                 <th>Montant de la commande</th>
@@ -16,6 +17,7 @@
         <tbody>
         {% for order in orders %}
             <tr>
+            <td>{{ order.paymentId }}</td>
                 <td>{{ order.reference }}</td>
                 <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ order.amount }}</td>

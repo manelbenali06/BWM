@@ -1,7 +1,7 @@
 <?php
 namespace App\DataFixtures;
 
-use Faker\Factory;
+use Faker;
 use App\Entity\Product;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -9,7 +9,7 @@ class ProductFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $faker = Factory::create('fr_FR');
+        $faker = Faker\Factory::create("fr_FR");
    
         for ($i=0; $i <50 ; $i++) { 
             $products = $this->getReference('products.' . $faker->numberBetween(1, 3));
