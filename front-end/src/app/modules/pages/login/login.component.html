@@ -1,0 +1,39 @@
+<div class="container-login">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card-login">
+        <div class="login-card">
+          <h5 class="login-card-title">Veuillez vous connecter</h5>
+          <form (ngSubmit)="login()" #loginForm="ngForm">
+            <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+            <div *ngIf="loggedInUser" class="mb-3">
+              Vous êtes connecté en tant que {{ loggedInUser }}, <a href="#" (click)="logout()">Déconnexion</a>
+            </div>
+
+            <div class="mb-3">
+              <label for="inputEmail" class="form-label">Email</label>
+              <input type="email" name="email" id="inputEmail" class="form-control" [(ngModel)]="email" autocomplete="email" required autofocus>
+            </div>
+
+            <div class="mb-3">
+              <label for="inputPassword" class="form-label">Mot de passe</label>
+              <input type="password" name="password" id="inputPassword" class="form-control" [(ngModel)]="password" autocomplete="current-password" required>
+            </div>
+
+            <input type="hidden" name="_csrf_token" [value]="csrfToken">
+
+            <p>
+              <a href="{{ path('app_forgot_password_request') }}">J'ai oublié mon mot de passe</a>
+            </p>
+
+            <button class="btn btn" type="submit">S'identifier</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <img src="assets/images/LOGO/BWM.png" alt="Logo Beauty Prestige" class="logo">
+    </div>
+  </div>
+</div>
