@@ -1,4 +1,42 @@
 /*footer*/
-.container-fluid{
-  background-color: #F8ACAC;
+footer {
+  background-color: #ECBA82;
+  color: #fff;
+  padding: 30px 0;
+}
+
+footer h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family:'Montsserat';
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: 'Montserrat';
+  font-size: 20px;
+}
+
+footer ul li a:hover {
+  color: #DC772E;
+}
+
+footer .text-center {
+  text-align: center;
+}
+
+footer img {
+  max-width: 100%;
+  height: auto;
 }

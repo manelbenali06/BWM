@@ -12,7 +12,7 @@ import { Product } from 'src/app/shared/interfaces/models/product';
 export class ProductsListComponent implements OnInit{
   products: Product[] = [];
   constructor(private productService: ProductsService){
-  // Récupérer les catégories du service et mettre à jour le tableau des categories
+  // Récupérer les produits du service et mettre à jour le tableau des produits
 }
 
   ngOnInit(): void{

@@ -1,13 +1,18 @@
 <div class="row pt-5">
   <div class="col-xl-3 col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
     <div class="card h-100 border-0">
-      <img [src]="'uploads/' + product.image" class="card-img-top" [alt]="product.name">
+      <img
+        [src]="'uploads/' + product.image"
+        class="card-img-top"
+        [alt]="product.name"
+      />
       <div class="card-body text-center">
         <h5 class="card-title">{{ product.name }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{ product.description }}</h6>
-        <span class="product-price">{{ product.price | number:'2.2-2' }} €</span>
+        <span class="product-price"
+          >{{ product.price | number : "2.2-2" }} €</span
+        >
       </div>
-
     </div>
   </div>
 </div>

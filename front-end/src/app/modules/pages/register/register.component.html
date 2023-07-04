@@ -1,0 +1,31 @@
+<section class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Inscription</h1>
+
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <fieldset class="mb-3">
+          <legend>Mon identité</legend>
+          <input type="text" formControlName="lastname" placeholder="Last Name">
+          <input type="text" formControlName="firstname" placeholder="First Name">
+          <input type="email" formControlName="email" placeholder="Email">
+        </fieldset>
+
+        <fieldset class="mb-3">
+          <legend>Mes coordonnées</legend>
+          <input type="text" formControlName="address" placeholder="Address">
+          <input type="text" formControlName="zipcode" placeholder="ZIP Code">
+          <input type="text" formControlName="city" placeholder="City">
+        </fieldset>
+
+        <label for="plainPassword">Mot de passe</label>
+        <input type="password" id="plainPassword" formControlName="plainPassword">
+
+        <input type="checkbox" formControlName="agreeTerms"> I agree to the terms and conditions.
+
+        <button type="submit" class="btn">M'inscrire</button>
+        <a routerLink="/login" class="btn">Me connecter</a>
+      </form>
+    </div>
+  </div>
+</section>
