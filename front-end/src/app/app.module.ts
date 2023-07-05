@@ -21,9 +21,7 @@ import { OrdersComponent } from './modules/pages/orders/orders.component';
 import { CartComponent } from './modules/pages/cart/cart.component';
 import { CartService } from './core/http/cart/cart.service';
 import { PaymentComponent } from './modules/pages/payment/payment.component';
-import { RedirectComponent } from './modules/pages/redirect/redirect.component';
-import { CancelComponent } from './modules/pages/cancel/cancel.component';
-import { SuccesComponent } from './modules/pages/succes/succes.component';
+
 
 @NgModule({
   declarations: [
@@ -42,10 +40,8 @@ import { SuccesComponent } from './modules/pages/succes/succes.component';
     RegisterComponent,
     OrdersComponent,
     CartComponent,
-    PaymentComponent,
-    RedirectComponent,
-    CancelComponent,
-    SuccesComponent
+    PaymentComponent
+
   ],
   imports: [
     BrowserModule,
