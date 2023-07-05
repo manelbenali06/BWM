@@ -11,10 +11,6 @@ import { ContactComponent } from './modules/pages/contact/contact.component';
 import { RegisterComponent } from './modules/pages/register/register.component';
 import { OrdersComponent } from './modules/pages/orders/orders.component';
 import { CartComponent } from './modules/pages/cart/cart.component';
-import { PaymentComponent } from './modules/pages/payment/payment.component';
-import { RedirectComponent } from './modules/pages/redirect/redirect.component';
-import { CancelComponent } from './modules/pages/cancel/cancel.component';
-import { SuccesComponent } from './modules/pages/succes/succes.component';
 
 const routes: Routes = [
   {
@@ -72,25 +68,7 @@ const routes: Routes = [
     path:'cart',
     component: CartComponent
   },
-  {
-    //localhost:4200
-    path:'payment',
-    component: PaymentComponent
-  },
-  {
-    //localhost:4200
-    path:'redirect',
-    component: RedirectComponent
-  }, {
-    //localhost:4200
-    path:'cancel',
-    component: CancelComponent
-  },
-  {
-    //localhost:4200
-    path:'succes',
-    component: SuccesComponent
-  },
+
 
   {
     path:'**',
