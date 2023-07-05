@@ -18,6 +18,12 @@ import { NailsComponent } from './modules/pages/nails/nails.component';
 import { ContactComponent } from './modules/pages/contact/contact.component';
 import { RegisterComponent } from './modules/pages/register/register.component';
 import { OrdersComponent } from './modules/pages/orders/orders.component';
+import { CartComponent } from './modules/pages/cart/cart.component';
+import { CartService } from './core/http/cart/cart.service';
+import { PaymentComponent } from './modules/pages/payment/payment.component';
+import { RedirectComponent } from './modules/pages/redirect/redirect.component';
+import { CancelComponent } from './modules/pages/cancel/cancel.component';
+import { SuccesComponent } from './modules/pages/succes/succes.component';
 
 @NgModule({
   declarations: [
@@ -34,16 +40,21 @@ import { OrdersComponent } from './modules/pages/orders/orders.component';
     NailsComponent,
     ContactComponent,
     RegisterComponent,
-    OrdersComponent
+    OrdersComponent,
+    CartComponent,
+    PaymentComponent,
+    RedirectComponent,
+    CancelComponent,
+    SuccesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
