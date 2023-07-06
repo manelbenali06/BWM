@@ -1,3 +1,5 @@
+
+import { Category } from "./category";
 export interface Product{
   "@id" ?:string;//le typage d emes variables
   id: number;
@@ -6,4 +8,7 @@ export interface Product{
   price:number
   image:string;
   quantity:number;
+  category:Category;
+  product:Product;
+
 }

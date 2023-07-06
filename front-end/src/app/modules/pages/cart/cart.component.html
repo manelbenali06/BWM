@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Panier</h1>
 
-  <div *ngIf="cartItems.length > 0; else emptyCart">
+  <ng-container *ngIf="cartItems.length > 0; else emptyCart">
     <div *ngFor="let item of cartItems" class="cart-item">
       <h4>{{ item.name }}</h4>
       <p>{{ item.description }}</p>
@@ -10,15 +10,14 @@
         <span>{{ item.quantity }}</span>
         <button (click)="addToCart(item)" class="btn btn-sm">+</button>
       </div>
-    </div>
-    <div class="cart-items">
-      <!-- Affichez la liste des produits du panier ici -->
+      <div class="product-image">
+        <img [src]="item.image" class="card-img-top" [alt]="item.name" />
+      </div>
     </div>
 
     <button (click)="handlePayment()" class="btn">Payer</button>
-
     <button (click)="clearCart()" class="btn">Vider le panier</button>
-  </div>
+  </ng-container>
 
   <ng-template #emptyCart>
     <p>Votre panier est vide.</p>
