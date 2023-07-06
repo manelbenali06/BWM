@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block body %}
+<div class="container-cart">
     <div class="row panier-body justify-content-center align-items-center">
         {% for item in cart %}
             <div class="col-md-4 d-flex">
@@ -17,11 +18,16 @@
                     {% endif %}
                     <div class="panier card-body">
                         <h5 class="panier card-title">{{ item.product.name }}</h5>
-                        <p class="panier card-text">Price: {{ item.product.price }}</p>
+                        <p class="panier card-text">Price: {{ item.product.price|number_format(2, ',', '.') }}€</p>
                         <p class="panier card-text">Quantity: {{ item.quantity }}</p>
+                        <p class="panier card-text">Total à payer : {{ (totalAmount)|number_format(2, ',', '.') }} €</p>
                         <div class="quantity-control">
-                            <a href="{{ path('app_cart_decrease', {'id': item.product.id}) }}"><i class="fas fa-minus"></i></a>
-                            <a href="{{ path('app_cart_increase', {'id': item.product.id}) }}"><i class="fas fa-plus"></i></a>
+                            <a href="{{ path('app_cart_decrease', {'id': item.product.id}) }}">
+                            <img src="{{ asset('assets/img/minus.png') }}" height="18px" alt="Supprimer mon produit">
+                            </a>
+                            <a href="{{ path('app_cart_increase', {'id': item.product.id}) }}">
+                            <img src="{{ asset('assets/img/plus.png') }}" height="18px" alt="Ajouter un produit">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -32,17 +38,19 @@
                         <div class="cart-actions">
                             <p class="panier card-text-text">Description: <br>{{ item.product.description }}</p>
                         </div>
+                        <div class="text-center">
+                            <a href="{{ path('app_payment_redirect') }}" class="btn">Payer</a>
+                            <a href="{{ path('app_product_index') }}" class="btn">Retour à la liste</a>
+                        </div>
                     {% endif %}
                 </div>
             </div>
         {% else %}
             <div class="col">
-                <p class="text-center">No records found</p>
+                <p class="text-center">Votre panier est vide</p>
+                <a href="{{ path('app_product_index') }}" class="btn">Retour à la liste</a>
             </div>
         {% endfor %}
-        <div class="text-center">
-            <p>Total Amount: {{ totalAmount }}</p>
-            <a href="{{ path('app_home') }}" class="btn">Retour à l'acceuil</a>
-        </div>
     </div>
+</div>
 {% endblock %}

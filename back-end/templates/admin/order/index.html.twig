@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Commande{% endblock %}
+{% block title %}Historique de Commandes{% endblock %}
 
 {% block body %}
-    <h1>Commande</h1>
+    <h1>Historique de Commandes </h1>
 
     <table class="table">
         <thead>
@@ -11,7 +11,6 @@
                 <th>Id</th>
                 <th>Reference</th>
                 <th>Payé le:</th>
-                <th>PayementId</th>
                 <th>Montant de la commande</th>
                 <th>actions</th>
             </tr>
@@ -22,8 +21,7 @@
                 <td>{{ order.id }}</td>
                 <td>{{ order.reference }}</td>
                 <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ order.paymentId }}</td>
-                <td>{{ order.amount }}</td>
+                <td>{{ (order.amount)|number_format(2, ',', '.') }}€</td>
                 <td>
                     <a href="{{ path('admin_order_show', {'id': order.id}) }}"class="btn btn-primary btn-sm">Regarder</a>
                     <a href="{{ path('admin_order_edit', {'id': order.id}) }}"class="btn btn-secondary btn-sm">Modifier</a>

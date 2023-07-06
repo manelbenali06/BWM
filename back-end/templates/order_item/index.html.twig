@@ -8,16 +8,19 @@
     <table class="table">
         <thead>
             <tr>
-               
+                <th>Id</th>
                 <th>Quantités commandés</th>
-               
+                <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for order_item in order_items %}
             <tr>
-    
+                <td>{{ order_item.id }}</td>
                 <td>{{ order_item.quantity }}</td>
+                <td>
+                    <a href="{{ path('app_home') }}"class="btn btn-success">Retour à l'acceuil</a>
+                </td>
             </tr>
         {% else %}
             <tr>
@@ -26,6 +29,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_home') }}"class="btn btn-success">Retour à l'acceuil</a>
 {% endblock %}

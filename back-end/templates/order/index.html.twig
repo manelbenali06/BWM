@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Commande{% endblock %}
+{% block title %}Historique de Commande{% endblock %}
 
 {% block body %}
-    <h1>Commande</h1>
+    <h1>Historique de Commande</h1>
 
     <table class="table">
         <thead>
             <tr>  
+                <th>Id</th>
                 <th>Reference</th>
                 <th>Payé le:</th>
                 <th>Montant de la commande</th>
@@ -16,9 +17,10 @@
         <tbody>
         {% for order in orders %}
             <tr>
+                <td>{{ order.id }}</td>
                 <td>{{ order.reference }}</td>
                 <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ order.amount }}</td>
+                <td>{{ (order.amount)|number_format(2, ',', '.') }}€</td>
             </tr>
         {% else %}
             <tr>
