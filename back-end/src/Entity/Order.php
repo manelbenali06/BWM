@@ -24,9 +24,6 @@ class Order
     #[ORM\Column]
     private ?\DateTime $paidAt = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $paymentId;
-
     #[ORM\Column]
     private ?float $amount = null;
 
@@ -70,17 +67,6 @@ class Order
         return $this;
     }
 
-    public function getPaymentId(): ?string
-    {
-        return $this->paymentId;
-    }
-
-    public function setPaymentId(string $paymentId): self
-    {
-        $this->paymentId = $paymentId;
-
-        return $this;
-    }
 
     public function getAmount(): ?float
     {
