@@ -13,10 +13,17 @@ class OrderItemType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $builder->add('quantity', IntegerType::class)
-                ->add('product', TextType::class, [
+        $builder 
+            ->add('quantity', IntegerType::class, [
+                'label' => 'Quantité commandée'
+            ])
+            ->add('product', TextType::class, [
                 'label' => 'Nom du produit'
-        ])
+                ])
+            ->add('price', MoneyType::class, [
+                'label' => 'Prix du produit',
+                'currency' => 'EUR'
+            ])
             ->add('order')
         ;
     }

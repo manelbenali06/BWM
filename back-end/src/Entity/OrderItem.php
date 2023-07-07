@@ -40,6 +40,14 @@ class OrderItem
 
         return $this;
     }
+    public function getPrice(): ?float
+    {
+        if ($this->product) {
+            return $this->product->getPrice();
+        }
+
+        return null;
+    }
 
     public function getQuantity(): ?int
     {

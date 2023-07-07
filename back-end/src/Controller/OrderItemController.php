@@ -17,4 +17,11 @@ class OrderItemController extends AbstractController
             'order_items' => $orderItemRepository->findAll(),
         ]);
     }
+    #[Route('/{id}', name: 'show', methods: ['GET'])]
+    public function show(OrderItemRepository $orderItemRepository): Response
+    {
+        return $this->render('order_item/show.html.twig', [
+            'order_item' => $orderItemRepository,
+        ]);
+    }
 }

@@ -9,6 +9,8 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Nom du produit</th>
+                <th>Prix du produit</th>
                 <th>Quantités commandés</th>
                 <th>actions</th>
             </tr>
@@ -17,9 +19,11 @@
         {% for order_item in order_items %}
             <tr>
                 <td>{{ order_item.id }}</td>
+                <td>{{ order_item.product }}</td> {# Assurez-vous que la propriété product de l'entité OrderItem correspond au nom du produit #}
+                <td>{{ order_item.product.price|number_format(2, ',', '.') }}€</td>
                 <td>{{ order_item.quantity }}</td>
                 <td>
-                    <a href="{{ path('app_home') }}"class="btn btn-success">Retour à l'acceuil</a>
+                    <a href="{{ path('order_item_index', {'id': order_item.id}) }}"class="btn btn-primary btn-sm">Regarder</a>
                 </td>
             </tr>
         {% else %}
