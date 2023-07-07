@@ -1,23 +1,39 @@
-<div class="container">
-  <h1>Panier</h1>
-
-  <ng-container *ngIf="cartItems.length > 0; else emptyCart">
-    <div *ngFor="let item of cartItems" class="cart-item">
-      <h4>{{ item.name }}</h4>
-      <p>{{ item.description }}</p>
-      <div class="quantity">
-        <button (click)="decreaseQuantity(item)" class="btn btn-sm">-</button>
-        <span>{{ item.quantity }}</span>
-        <button (click)="addToCart(item)" class="btn btn-sm">+</button>
-      </div>
-      <div class="product-image">
-        <img [src]="item.image" class="card-img-top" [alt]="item.name" />
+<div class="container-cart">
+  <div class="row panier-body justify-content-center align-items-center" *ngIf="cartItems.length > 0; else emptyCart">
+    <div class="col-md-4 d-flex" *ngFor="let item of cartItems">
+      <div class="panier-card small-card">
+        <img [src]="'assets/images/uploads/' + item.image" class="w-100" [alt]="item.name" />
+        <div class="panier card-body">
+          <h5 class="panier card-title">{{ item.name }}</h5>
+          <p class="panier card-text">Prix: {{ item.price | number: '2.2-2' }}€</p>
+          <p class="panier card-text">Quantité: {{ item.quantity }}</p>
+          <p class="panier card-text">Total à payer : {{ (item.price * item.quantity) | number: '2.2-2' }} €</p>
+          <div class="quantity-control">
+            <a href="#" (click)="decreaseQuantity(item)">
+              <img src="assets/images/img/minus.png" height="18px" alt="Supprimer mon produit">
+            </a>
+            <a href="#" (click)="addToCart(item)">
+              <img src="assets/images/img/plus.png" height="18px" alt="Ajouter un produit">
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-    <button (click)="clearCart()" class="btn">Vider le panier</button>
-  </ng-container>
-
+    <div class="col-md-6 d-flex">
+      <div class="panier-card"  *ngFor="let item of cartItems">
+        <div class="cart-actions">
+          <p class="panier card-text-text">Description: <br>{{ item.description }}</p>
+        </div>
+        <div class="text-center">
+          <button (click)="clearCart()" class="btn">Vider le panier</button>
+          <a href="#" class="btn">Payer</a>
+          <a href="#" class="btn">Retour à la liste</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <ng-template #emptyCart>
-    <p>Votre panier est vide.</p>
+    <p class="text-center">Votre panier est vide</p>
+    <a href="#" class="btn">Retour à la liste</a>
   </ng-template>
 </div>

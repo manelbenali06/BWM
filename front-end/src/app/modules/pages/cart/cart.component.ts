@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { CartService } from 'src/app/core/http/cart/cart.service'; // Assurez-vous de mettre le bon chemin d'accès
+import { CartService } from 'src/app/core/http/cart/cart.service';
 import { Product } from 'src/app/shared/interfaces/models/product';
-import { loadStripe } from '@stripe/stripe-js';
- // Assurez-vous de mettre le bon chemin d'accès
 
 @Component({
   selector: 'app-cart',
@@ -13,28 +11,32 @@ export class CartComponent {
   cartItems: Product[] = [];
 
   constructor(private cartService: CartService) {
-    // Récupérer les éléments du panier lors de l'initialisation du composant
     this.cartItems = this.cartService.getCartItems();
   }
 
   removeFromCart(product: Product) {
     this.cartService.removeFromCart(product);
-    // Mettre à jour les éléments du panier après la suppression d'un produit
     this.cartItems = this.cartService.getCartItems();
   }
 
   addToCart(product: Product) {
-
-
     this.cartService.addToCart(product);
-      }
+  }
 
-      decreaseQuantity(product: Product) {
-        this.cartService.decreaseQuantity(product);
-      }
+  decreaseQuantity(product: Product) {
+    this.cartService.decreaseQuantity(product);
+  }
 
-      clearCart() {
-        this.cartService.clearCart();
+  clearCart() {
+    this.cartService.clearCart();
     this.cartItems = [];
-      }
+  }
+
+  calculateTotal(): number {
+    let total = 0;
+    for (let item of this.cartItems) {
+      total += item.price * item.quantity;
     }
+    return total;
+  }
+}

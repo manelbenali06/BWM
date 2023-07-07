@@ -3,7 +3,6 @@ import { Product } from 'src/app/shared/interfaces/models/product';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-declare const Stripe;
 @Injectable({
   providedIn: 'root'
 })
@@ -59,6 +58,8 @@ export class CartService {
   private saveCart() {
     localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
   }
-
+  createStripeCheckoutSession(products: Product[]): Observable<any> {
+    return this.http.post<any>(`${this.stripeApiUrl}/create-checkout-session`, { products });
+  }
 }
 

@@ -1,4 +1,4 @@
-
+import { Cart } from "./cart";
 import { Category } from "./category";
 export interface Product{
   "@id" ?:string;//le typage d emes variables
@@ -9,6 +9,7 @@ export interface Product{
   image:string;
   quantity:number;
   category:Category;
-  
+  cart:Cart;
+
 
 }
