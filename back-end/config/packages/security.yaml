@@ -14,7 +14,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         api_login:
-            pattern: ^/api/login
+            pattern: ^/auth
             stateless: true
             json_login:
                 check_path: auth # The name in routes.yaml is enough for mapping
