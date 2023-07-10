@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from './authentificationService';
+import { User } from 'src/app/shared';
+import { UserService } from 'src/app/core/http/user/user.service';
+import { ApiErrorResponse } from 'src/app/shared/interfaces/api/api.error.reponse';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -7,28 +10,23 @@ import { AuthenticationService } from './authentificationService';
   styleUrls: ['login.component.css']
 })
 export class LoginComponent {
-  email: string = '';
-  password: string = '';
-  error: string = '';
-  loggedInUser: string = '';
-  csrfToken: string = ''; // Replace with the actual value
+  user: User = new User();
+  hasError: boolean = false;
+  hasErrorMessage: ApiErrorResponse | undefined
 
-  constructor(private authService: AuthenticationService) {}
-
-  login() {
-    this.authService.login(this.email, this.password)
-      .subscribe(
-        user => {
-          this.loggedInUser = user.username; // Replace with the appropriate property of the user object
-        },
-        error => {
-          this.error = error.message; // Replace with the appropriate property of the error object
-        }
-      );
+  constructor(private userService: UserService, private router: Router) {
   }
 
-  logout() {
-    this.authService.logout();
-    this.loggedInUser = '';
+  async login() {
+    const response = await this.userService.getTokenAccess(this.user);
+    console.log(response);
+
+    if (response.status) {
+      this.hasError = false;
+
+    }
+
+    this.hasError = true;
+    this.hasErrorMessage = response.message;
   }
 }

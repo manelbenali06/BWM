@@ -21,6 +21,7 @@ import { OrdersComponent } from './modules/pages/orders/orders.component';
 import { CartComponent } from './modules/pages/cart/cart.component';
 import { CartService } from './core/http/cart/cart.service';
 import { PaymentComponent } from './modules/pages/payment/payment.component';
+import { LoginComponent } from './modules/pages/login/login.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { PaymentComponent } from './modules/pages/payment/payment.component';
     RegisterComponent,
     OrdersComponent,
     CartComponent,
-    PaymentComponent
+    PaymentComponent,
+    LoginComponent
 
   ],
   imports: [

@@ -1,39 +1,36 @@
-<div class="container-login">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card-login">
-        <div class="login-card">
-          <h5 class="login-card-title">Veuillez vous connecter</h5>
-          <form (ngSubmit)="login()" #loginForm="ngForm">
-            <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+<div class="page-contact">
 
-            <div *ngIf="loggedInUser" class="mb-3">
-              Vous êtes connecté en tant que {{ loggedInUser }}, <a href="#" (click)="logout()">Déconnexion</a>
-            </div>
-
-            <div class="mb-3">
-              <label for="inputEmail" class="form-label">Email</label>
-              <input type="email" name="email" id="inputEmail" class="form-control" [(ngModel)]="email" autocomplete="email" required autofocus>
-            </div>
-
-            <div class="mb-3">
-              <label for="inputPassword" class="form-label">Mot de passe</label>
-              <input type="password" name="password" id="inputPassword" class="form-control" [(ngModel)]="password" autocomplete="current-password" required>
-            </div>
-
-            <input type="hidden" name="_csrf_token" [value]="csrfToken">
-
-            <p>
-              <a href="{{ path('app_forgot_password_request') }}">J'ai oublié mon mot de passe</a>
-            </p>
-
-            <button class="btn btn" type="submit">S'identifier</button>
-          </form>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <!--leave a reply-->
+      <div class="detail-caption">
+        <span>CONNEXION</span>
       </div>
-    </div>
-    <div class="col-md-6">
-      <img src="assets/images/LOGO/BWM.png" alt="Logo Beauty Prestige" class="logo">
+
+      <form #form="ngForm" (ngSubmit)="login()" class="comment-form">
+
+        <div class="alert alert-danger" *ngIf="hasError">
+          {{ hasErrorMessage?.message }}
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="field-item form-group" [class.has-error]="email.invalid && email.touched">
+              <input type="email" id="email" name="email"
+                     [(ngModel)]="user.email" #email="ngModel"
+                     class="form-control" required placeholder="Saisissez votre email.">
+            </div>
+            <div class="field-item form-group" [class.has-error]="password.invalid && password.touched">
+              <input type="password" id="password" name="password"
+                     [(ngModel)]="user.password" #password="ngModel"
+                     class="form-control" required placeholder="Saisissez votre mot de passe.">
+            </div>
+            <div class="field-item form-group">
+              <button [disabled]="form.invalid" class="my-btn my-btn-dark">CONNEXION</button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>
