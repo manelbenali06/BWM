@@ -20,9 +20,8 @@ import { RegisterComponent } from './modules/pages/register/register.component';
 import { OrdersComponent } from './modules/pages/orders/orders.component';
 import { CartComponent } from './modules/pages/cart/cart.component';
 import { CartService } from './core/http/cart/cart.service';
-import { PaymentComponent } from './modules/pages/payment/payment.component';
 import { LoginComponent } from './modules/pages/login/login.component';
-import  {  StripeModule  }  from  "stripe-angular"
+import  { StripeModule }  from  "stripe-angular"
 
 @NgModule({
   declarations: [
@@ -41,7 +40,6 @@ import  {  StripeModule  }  from  "stripe-angular"
     RegisterComponent,
     OrdersComponent,
     CartComponent,
-    PaymentComponent,
     LoginComponent
 
   ],

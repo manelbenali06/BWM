@@ -1,4 +1,6 @@
-
+import { User } from "../models";
+import { Category } from "../models";
+import { Product } from "../models";
 export interface ApiErrorResponse {
   "hydra:title"?: string;
   "hydra:description"?: string

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -8,4 +7,4 @@ import { Component } from '@angular/core';
 })
 export class PaymentComponent {
 
-}
+  }
