@@ -2,18 +2,29 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Metadata\Get;
+use App\Controller\Api\MeController;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\UserRepository;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
-use ApiPlatform\Metadata\ApiResource;
 
 #[ApiResource]
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[ApiResource(security: "is_granted('ROLE_USER')")]
+#[Get(security: "is_granted('ROLE_ADMIN') or object == user")]
+#[GetCollection(
+    uriTemplate: "/me",
+    controller: MeController::class, /*security: "is_granted('ROLE_USER')",
+name: 'me'
+*/
+)]
+#[UniqueEntity(fields: ['email'], message: 'Il existe déja un compte avec cette email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -65,7 +76,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->id;
     }
 
- 
+
     public function getFirstname(): ?string
     {
         return $this->firstname;
@@ -168,7 +179,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
 
-   
+
     public function getAddress(): ?string
     {
         return $this->address;
