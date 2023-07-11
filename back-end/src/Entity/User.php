@@ -14,16 +14,20 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
-#[ApiResource]
+#[ApiResource(
+    operations: [
+        new GetCollection(
+            uriTemplate: '/me',
+            controller: MeController::class,
+            //security: "is_granted('USER_VIEW', object)",
+            security: "is_granted('ROLE_USER')",
+            name: 'me'
+        ),
+    ]
+)]
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ApiResource(security: "is_granted('ROLE_USER')")]
-#[Get(security: "is_granted('ROLE_ADMIN') or object == user")]
-#[GetCollection(
-    uriTemplate: "/me",
-    controller: MeController::class, /*security: "is_granted('ROLE_USER')",
-name: 'me'
-*/
-)]
+//#[Get(security: "is_granted('ROLE_ADMIN') or object == user")]
 #[UniqueEntity(fields: ['email'], message: 'Il existe déja un compte avec cette email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {

@@ -11,7 +11,8 @@ class MeController extends AbstractController
     public function __invoke( /*#[CurrentUser] User $user*/): User
     {
         $user = $this->getUser();
-      
+        dd($user);
+
         return $user;
     }
 }
