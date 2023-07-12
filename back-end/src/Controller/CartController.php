@@ -16,13 +16,14 @@ class CartController extends AbstractController
      * @Route("/cart", name="app_cart_index")
      */
     public function index(CartService $cartService): Response
-    {
-        $cart = $cartService->getCart();
-        return $this->render('cart/index.html.twig', [
-            'cart' => array_values($cart)
-        ]);
-    }
-
+{
+    $cart = $cartService->getCart();
+    $totalAmount = $cartService->getTotalAmount();
+    return $this->render('cart/index.html.twig', [
+        'cart' => array_values($cart),
+        'totalAmount' => $totalAmount
+    ]);
+}
     /**
      * @Route("/cart/add/{id}", name="app_cart_add")
      */
@@ -50,5 +51,23 @@ class CartController extends AbstractController
         return $this->redirectToRoute('app_cart_index');
     }
    
+    /**
+     * @Route("/cart/increase/{id}", name="app_cart_increase")
+     */
+    public function increaseQuantity(Product $product, CartService $cartService): Response
+    {
+        $cartService->increaseQuantity($product);
+        return $this->redirectToRoute('app_cart_index');
+    }
+
+    /**
+     * @Route("/cart/decrease/{id}", name="app_cart_decrease")
+     */
+    public function decreaseQuantity(Product $product, CartService $cartService): Response
+    {
+        $cartService->decreaseQuantity($product);
+        return $this->redirectToRoute('app_cart_index');
+    }
+
 
 }

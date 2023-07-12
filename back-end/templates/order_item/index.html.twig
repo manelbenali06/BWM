@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Elèments de commande {% endblock %}
+
+{% block body %}
+    <h1>Elèments de commande </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom du produit</th>
+                <th>Prix du produit</th>
+                <th>Quantités commandés</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order_item in order_items %}
+            <tr>
+                <td>{{ order_item.id }}</td>
+                <td>{{ order_item.product }}</td> {# Assurez-vous que la propriété product de l'entité OrderItem correspond au nom du produit #}
+                <td>{{ order_item.product.price|number_format(2, ',', '.') }}€</td>
+                <td>{{ order_item.quantity }}</td>
+                <td>
+                    <a href="{{ path('order_item_index', {'id': order_item.id}) }}"class="btn btn-primary btn-sm">Regarder</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun element de commande</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

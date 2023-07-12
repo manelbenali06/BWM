@@ -1,0 +1,38 @@
+.container-profil{
+    margin-top: 40px;
+    padding-top: 40px;
+}
+
+/* Styles pour la division du profil */
+.profil {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    }
+    
+.profil h1 { 
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center; 
+    margin-bottom: 20px;
+    }
+    
+/* Styles pour les informations du profil */
+.profile-info p {  
+    font-size: 16px; 
+    margin-bottom: 10px;
+    }
+/* Styles pour les actions du profil */
+.profile-actions {
+    text-align: center;
+      margin-top: 20px;
+    }
+
+.profile-actions a {
+    display: inline-block;
+    margin-right: 10px;
+}
+    
+/* Styles pour les boutons */
+  

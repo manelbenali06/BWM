@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}Modifier mes informations personnelles{% endblock %}
+
+{% block body %}
+    <h1>Modifier mes informations personnelles</h1>
+    
+    {{ form_start(form) }}
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
+        {{ form_row(form.email) }}
+      {{ form_end(form) }}   
+
+{% endblock %}

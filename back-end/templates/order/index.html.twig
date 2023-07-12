@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Historique de Commande{% endblock %}
+
+{% block body %}
+    <h1>Historique de Commande</h1>
+
+    <table class="table">
+        <thead>
+            <tr>  
+                <th>Id</th>
+                <th>Reference</th>
+                <th>Payé le:</th>
+                <th>Montant de la commande</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.reference }}</td>
+                <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ (order.amount)|number_format(2, ',', '.') }}€</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune commande</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_home') }}"class="btn btn-success">Retour à l'acceuil</a>
+    <a href="{{ path('order_item_index') }}"class="btn btn-success">Voir le détail de a commande</a>
+{% endblock %}

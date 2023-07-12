@@ -1,0 +1,25 @@
+<h1>Commande</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Reference</th>
+      <th>Payé le:</th>
+      <th>Montant de la commande</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="orders.length > 0; else noOrders">
+      <tr *ngFor="let order of orders">
+        <td>{{ order.reference }}</td>
+        <td>{{ order.paidAt ? (order.paidAt | date:'yyyy-MM-dd HH:mm:ss') : '' }}</td>
+        <td>{{ order.amount }}</td>
+      </tr>
+    </ng-container>
+    <ng-template #noOrders>
+      <tr>
+        <td colspan="3">Aucune commande</td>
+      </tr>
+    </ng-template>
+  </tbody>
+</table>

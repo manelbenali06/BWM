@@ -1,3 +1,10 @@
-.navbar-expand-lg {
-  background-color: #F8ACAC;
- }
+
+/* navbar*/
+.navbar-nav .nav-link {
+  font-family:'Montsserat';
+  font-size: 20px;
+}
+.container .navbar-brand{
+  font-family:'Montsserat';
+  font-size: 22px;
+}

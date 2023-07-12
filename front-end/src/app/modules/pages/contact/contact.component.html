@@ -1,0 +1,31 @@
+<section class="contact">
+    <div class="container">
+      <div class="row pt-5">
+        <div class="col-md-6">
+          <form [routerLink]="'/app_contact'" method="POST">
+            <div class="form-group">
+              <label for="name">Nom :</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail :</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Téléphone :</label>
+              <input type="tel" id="phone" name="phone" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message :</label>
+              <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn">Envoyer</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="contact-info">
+            <img src='assets/images/LOGO/BWM.png' alt="Logo Beauty Prestige" class="logo">
+          </div>
+        </div>
+      </div>
+    </div>

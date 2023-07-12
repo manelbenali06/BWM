@@ -8,11 +8,8 @@ import { environment } from 'src/environments/environment.development';
   providedIn: 'root'
 })
 export class ProductsService {
-
   constructor(private http: HttpClient) {
-
    }
-
    getProducts(): Observable<ApiProductResponse> {
     return this.http.get<ApiProductResponse>(environment.apiEndpoint+ '/api/products')
    }

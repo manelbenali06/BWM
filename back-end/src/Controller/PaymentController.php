@@ -44,7 +44,7 @@ class PaymentController extends AbstractController
     {
         $order = new Order();
         $order->setReference(rand(0,1000000));
-        $order->setPaidAt(new \DateTimeImmutable());
+        $order->setPaidAt(new \DateTime());
         $order->setAmount($cartService->getTotalAmount());
         /** @var User $user */
         $user = $this->getUser();

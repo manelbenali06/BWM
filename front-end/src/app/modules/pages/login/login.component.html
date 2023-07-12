@@ -1,0 +1,36 @@
+<div class="page-contact">
+
+  <div class="row">
+    <div class="col-md-12">
+      <!--leave a reply-->
+      <div class="detail-caption">
+        <span>CONNEXION</span>
+      </div>
+
+      <form #form="ngForm" (ngSubmit)="login()" class="comment-form">
+
+        <div class="alert alert-danger" *ngIf="hasError">
+          {{ hasErrorMessage?.message }}
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="field-item form-group" [class.has-error]="email.invalid && email.touched">
+              <input type="email" id="email" name="email"
+                     [(ngModel)]="user.email" #email="ngModel"
+                     class="form-control" required placeholder="Saisissez votre email.">
+            </div>
+            <div class="field-item form-group" [class.has-error]="password.invalid && password.touched">
+              <input type="password" id="password" name="password"
+                     [(ngModel)]="user.password" #password="ngModel"
+                     class="form-control" required placeholder="Saisissez votre mot de passe.">
+            </div>
+            <div class="field-item form-group">
+              <button [disabled]="form.invalid" class="my-btn my-btn-dark">CONNEXION</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

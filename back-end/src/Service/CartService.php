@@ -5,8 +5,8 @@ namespace App\Service;
 use App\Entity\Product;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class CartService {
-
+class CartService
+{
     private RequestStack $requestStack;
 
     public function __construct(RequestStack $requestStack)
@@ -14,17 +14,20 @@ class CartService {
         $this->requestStack = $requestStack;
     }
 
-    public function getCart(): array {
+    public function getCart(): array
+    {
         $session = $this->requestStack->getSession();
         return $session->get('cart', []);
     }
 
-    private function saveCart(array $cart): void {
+    private function saveCart(array $cart): void
+    {
         $session = $this->requestStack->getSession();
         $session->set('cart', $cart);
     }
 
-    public function add(Product $product): array {
+    public function add(Product $product): array
+    {
         $cart = $this->getCart();
         $productId = $product->getId();
         if (!isset($cart[$productId])) {
@@ -33,40 +36,63 @@ class CartService {
                 'quantity' => 0
             ];
         }
-        $cart[$productId]['quantity'] = $cart[$productId]['quantity'] + 1;
+        $cart[$productId]['quantity'] += 1; // Modifier la quantité du produit
         $this->saveCart($cart);
         return $cart;
     }
 
-    public function clear(): array {
+    public function decreaseQuantity(Product $product): array
+    {
+        $cart = $this->getCart();
+        $productId = $product->getId();
+        if (isset($cart[$productId])) {
+            $cart[$productId]['quantity']--;
+            if ($cart[$productId]['quantity'] <= 0) {
+                unset($cart[$productId]);
+            }
+            $this->saveCart($cart);
+        }
+        return $cart;
+    }
+
+    public function increaseQuantity(Product $product): array
+    {
+        $cart = $this->getCart();
+        $productId = $product->getId();
+        if (isset($cart[$productId])) {
+            $cart[$productId]['quantity']++;
+            $this->saveCart($cart);
+        }
+        return $cart;
+    }
+
+    public function clear(): array
+    {
         $cart = [];
         $this->saveCart($cart);
         return $cart;
     }
 
-    public function remove(Product $product): array {
+    public function remove(Product $product): array
+    {
         $cart = $this->getCart();
         $productId = $product->getId();
-        if (!isset($cart[$productId])) {
-            return $cart;
-        }
-        $cart[$productId]['quantity'] = $cart[$productId]['quantity'] - 1;
-        if ($cart[$productId]['quantity'] <= 0) {
+        if (isset($cart[$productId])) {
             unset($cart[$productId]);
+            $this->saveCart($cart);
         }
-        $this->saveCart($cart);
         return $cart;
     }
 
-    public function getTotalAmount(): float {
+    public function getTotalAmount(): float
+    {
         $amount = 0.0;
 
         $cart = $this->getCart();
         foreach ($cart as $productId => $item) {
             $amount += $item['quantity'] * $item['product']->getPrice();
         }
-        
+
         return $amount;
     }
-
 }

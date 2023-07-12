@@ -1,7 +1,8 @@
 <h2>Liste des catégories</h2>
-
+{{ categories| json}}
 <ul>
   <li *ngFor="let category of categories">
+
     {{ category.name }}
   </li>
 </ul>
