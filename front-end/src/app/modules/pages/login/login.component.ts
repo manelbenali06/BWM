@@ -31,7 +31,7 @@ export class LoginComponent {
       localStorage.setItem('token', response.token);
       const loginResponse = await this.userService.getMe(response.token);
       console.log(loginResponse);
-
+      this.router.navigate(['/product']);
       // TODO : Storage du user dans le localStorage
       // TODO : User behaviorSubject
       // TODO : Redirection
