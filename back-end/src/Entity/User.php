@@ -2,7 +2,8 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Put;
+use ApiPlatform\Metadata\Delete;
 use App\Controller\Api\MeController;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
@@ -14,6 +15,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
+#[ORM\Entity(repositoryClass: UserRepository::class)]
+#[UniqueEntity(fields: ['email'], message: 'Il existe déja un compte avec cette email')]
 #[ApiResource(
     operations: [
         new GetCollection(
@@ -23,12 +26,14 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
             security: "is_granted('ROLE_USER')",
             name: 'me'
         ),
+        new \ApiPlatform\Metadata\Post(),
+        new Put(security: "is_granted('USER_EDIT', object)"),
+        new Delete(security: "is_granted('USER_DELETE', object)")
     ]
 )]
-#[ORM\Entity(repositoryClass: UserRepository::class)]
-#[ApiResource(security: "is_granted('ROLE_USER')")]
+
+//#[ApiResource(security: "is_granted('ROLE_USER')")]
 //#[Get(security: "is_granted('ROLE_ADMIN') or object == user")]
-#[UniqueEntity(fields: ['email'], message: 'Il existe déja un compte avec cette email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]

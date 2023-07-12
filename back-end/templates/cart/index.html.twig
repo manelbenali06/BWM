@@ -20,7 +20,6 @@
                         <h5 class="panier card-title">{{ item.product.name }}</h5>
                         <p class="panier card-text">Price: {{ item.product.price|number_format(2, ',', '.') }}€</p>
                         <p class="panier card-text">Quantity: {{ item.quantity }}</p>
-                        <p class="panier card-text">Total à payer : {{ (totalAmount)|number_format(2, ',', '.') }} €</p>
                         <div class="quantity-control">
                             <a href="{{ path('app_cart_decrease', {'id': item.product.id}) }}">
                             <img src="{{ asset('assets/img/minus.png') }}" height="18px" alt="Supprimer mon produit">
@@ -39,6 +38,7 @@
                             <p class="panier card-text-text">Description: <br>{{ item.product.description }}</p>
                         </div>
                         <div class="text-center">
+                            <p class="panier card-text">Total à payer : {{ (totalAmount)|number_format(2, ',', '.') }} €</p>
                             <a href="{{ path('app_payment_redirect') }}" class="btn">Payer</a>
                             <a href="{{ path('app_product_index') }}" class="btn">Retour à la liste</a>
                         </div>

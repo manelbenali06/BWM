@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class CartService {
   private cartItems: Product[] = [];
-  private stripeApiUrl = ''; // Remplacez par l'URL de votre API Stripe
 
   constructor(private http: HttpClient) {
     // Retrieve cart items from localStorage if they exist
@@ -58,8 +57,6 @@ export class CartService {
   private saveCart() {
     localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
   }
-  createStripeCheckoutSession(products: Product[]): Observable<any> {
-    return this.http.post<any>(`${this.stripeApiUrl}/create-checkout-session`, { products });
-  }
+
 }
 

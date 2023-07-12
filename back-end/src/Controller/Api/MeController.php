@@ -1,6 +1,6 @@
 <?php
-namespace App\Controller\Api;
 
+namespace App\Controller\Api;
 use App\Entity\User;
 use Symfony\Component\Security\Http\Attribute\CurrentUser;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

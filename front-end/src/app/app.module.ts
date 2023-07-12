@@ -21,7 +21,7 @@ import { OrdersComponent } from './modules/pages/orders/orders.component';
 import { CartComponent } from './modules/pages/cart/cart.component';
 import { CartService } from './core/http/cart/cart.service';
 import { LoginComponent } from './modules/pages/login/login.component';
-import  { StripeModule }  from  "stripe-angular"
+//import  { StripeModule }  from  "stripe-angular"
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import  { StripeModule }  from  "stripe-angular"
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    StripeModule.forRoot("pk_test_51K4ktlDXeRuhLI1lO2hM9XGHupAhMPI2OlAu4TComvYY0qnSUwg1pOeTc6ko4SlunkGz3OQKp9Fcjfdj1ddUjd9E00TMNLaoqj")
+   // StripeModule.forRoot("pk_test_51K4ktlDXeRuhLI1lO2hM9XGHupAhMPI2OlAu4TComvYY0qnSUwg1pOeTc6ko4SlunkGz3OQKp9Fcjfdj1ddUjd9E00TMNLaoqj")
   ],
   providers: [CartService],
   bootstrap: [AppComponent]
