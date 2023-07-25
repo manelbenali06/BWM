@@ -3,10 +3,9 @@
 {% block title %}Historique de Commandes{% endblock %}
 
 {% block body %}
-    <h1>Historique de Commandes </h1>
-
-    <table class="table">
-        <thead>
+ <div class="container pt-3">
+    <table class="table pt-3">
+        <thead class="thead" style="background-color: #ECBA82;">
             <tr>
                 <th>Id</th>
                 <th>Reference</th>
@@ -35,6 +34,6 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('admin_order_new') }}"class="btn btn-success">Créer une nouvelle commande</a>
+    <a href="{{ path('admin_order_new') }}"class="btn">Créer une nouvelle commande</a>
+    </div>
 {% endblock %}

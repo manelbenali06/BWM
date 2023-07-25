@@ -3,11 +3,9 @@
 {% block title %}Liste des produits{% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1>Produits</h1>
-
-    <table class="table">
-        <thead class="thead-dark">
+<div class="container pt-3">
+    <table class="table ">
+        <thead class="thead" style="background-color: #ECBA82;">
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
@@ -41,6 +39,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_product_new') }}" class="btn btn-success">Créer un nouveau produit</a>
+    <a href="{{ path('admin_product_new') }}" class="btn">Créer un nouveau produit</a>
 </div>
 {% endblock %}

@@ -56,27 +56,42 @@ footer img {
   height: auto;
 }
 
-/* CSS - Espce administrateur */
-
-.admin-container {
-  max-width: 500px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  padding: 20px;
+/* Style général du menu de navigation */
+.admin-sidebar {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 15px;
 }
 
+/* Style des titres */
 .admin-sidebar__title {
+  font-size: 20px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
+/* Style des cartes */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-5px);
+}
+
+/* Style des liens */
 .admin-sidebar__link {
-  color: #000;
+  display: block;
+  color: #333;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .admin-sidebar__link:hover {
   color: #007bff;
 }
-
