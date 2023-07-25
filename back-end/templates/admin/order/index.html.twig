@@ -23,9 +23,9 @@
                 <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ (order.amount)|number_format(2, ',', '.') }}€</td>
                 <td>
-                    <a href="{{ path('admin_order_show', {'id': order.id}) }}"class="btn btn-primary btn-sm">Regarder</a>
-                    <a href="{{ path('admin_order_edit', {'id': order.id}) }}"class="btn btn-secondary btn-sm">Modifier</a>
-                    <a href="{{ path('admin_order_delete', {'id': order.id}) }}"class="btn btn-danger btn-sm">supprimer</a>
+                    <a href="{{ path('admin_order_show', {'id': order.id}) }}"class="btn">Regarder</a>
+                    <a href="{{ path('admin_order_edit', {'id': order.id}) }}"class="btn">Modifier</a>
+                    <a href="{{ path('admin_order_delete', {'id': order.id}) }}"class="btn">supprimer</a>
                 </td>
             </tr>
         {% else %}

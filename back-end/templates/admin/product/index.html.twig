@@ -28,9 +28,9 @@
                     {% endif %}
                 </td>
                 <td>
-                    <a href="{{ path('admin_product_show', {'id': product.id}) }}" class="btn btn-primary btn-sm">Regarder</a>
-                    <a href="{{ path('admin_product_edit', {'id': product.id}) }}" class="btn btn-secondary btn-sm">Modifier</a>
-                    <a href="{{ path('admin_product_delete', {'id': product.id}) }}" class="btn btn-danger btn-sm">Supprimer</a>
+                    <a href="{{ path('admin_product_show', {'id': product.id}) }}" class="btn">Regarder</a>
+                    <a href="{{ path('admin_product_edit', {'id': product.id}) }}" class="btn">Modifier</a>
+                    <a href="{{ path('admin_product_delete', {'id': product.id}) }}" class="btn">Supprimer</a>
                 </td>
             </tr>
         {% else %}
