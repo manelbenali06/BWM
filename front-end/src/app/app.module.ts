@@ -21,6 +21,7 @@ import { OrdersComponent } from './modules/pages/orders/orders.component';
 import { CartComponent } from './modules/pages/cart/cart.component';
 import { CartService } from './core/http/cart/cart.service';
 import { LoginComponent } from './modules/pages/login/login.component';
+import { ProfileComponent } from './modules/pages/profile/profile.component';
 //import  { StripeModule }  from  "stripe-angular"
 
 @NgModule({
@@ -40,7 +41,8 @@ import { LoginComponent } from './modules/pages/login/login.component';
     RegisterComponent,
     OrdersComponent,
     CartComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
 
   ],
   imports: [

@@ -1,0 +1,21 @@
+<!-- profile.component.html -->
+<div class="container-profil mt-4">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="profil">
+        <h1 class="text-center">Espace client</h1>
+        <div class="profile-info">
+          <p><strong>Prénom :</strong> {{ user.firstName }}</p>
+          <p><strong>Nom :</strong> {{ user.lastName }}</p>
+          <p><strong>Adresse email :</strong> {{ user.email }}</p>
+        </div>
+      </div>
+      <div class="profile-actions">
+        <a routerLink="/edit-profile" class="btn">Modifier mes informations</a>
+        <a routerLink="/edit-password" class="btn">Modifier mon mot de passe</a>
+        <a routerLink="/order-history" class="btn">Historique de commande</a>
+      </div>
+    </div>
+  </div>
+</div>
+
