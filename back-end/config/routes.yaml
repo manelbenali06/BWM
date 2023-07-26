@@ -5,3 +5,7 @@ controllers:
 auth:
     path: /auth
     methods: [POST]
+    
+app_product_index:
+    path: /products
+    controller: App\Controller\ProductController::index
