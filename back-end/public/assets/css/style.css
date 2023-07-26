@@ -93,5 +93,5 @@ footer img {
 }
 
 .admin-sidebar__link:hover {
-  color: #007bff;
+  color: hsla(37, 100%, 50%, 0.881);
 }

@@ -3,12 +3,11 @@
 {% block title %}Historique de Commande{% endblock %}
 
 {% block body %}
-    <h1>Historique de Commande</h1>
 
+ <div class="container pt-3">
     <table class="table">
-        <thead>
+        <thead class="thead" style="background-color: #ECBA82;">
             <tr>  
-                <th>Id</th>
                 <th>Reference</th>
                 <th>Payé le:</th>
                 <th>Montant de la commande</th>
@@ -17,7 +16,7 @@
         <tbody>
         {% for order in orders %}
             <tr>
-                <td>{{ order.id }}</td>
+                
                 <td>{{ order.reference }}</td>
                 <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ (order.amount)|number_format(2, ',', '.') }}€</td>
@@ -29,7 +28,7 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_home') }}"class="btn btn-success">Retour à l'acceuil</a>
-    <a href="{{ path('order_item_index') }}"class="btn btn-success">Voir le détail de a commande</a>
+    <a href="{{ path('app_home') }}"class="btn">Retour à l'acceuil</a>
+    <a href="{{ path('order_item_index') }}"class="btn">Voir le détail de la commande</a>
+</div>
 {% endblock %}
