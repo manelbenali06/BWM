@@ -9,7 +9,7 @@ class BasicTest extends WebTestCase
     public function testSomething(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/home');
+        $crawler = $client->request('GET', '/');
 
         $this->assertResponseIsSuccessful();
         
