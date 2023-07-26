@@ -31,28 +31,32 @@ class RegistrationController extends AbstractController
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, UserAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
+        //crée une nouvelle instance de la classe User
         $user = new User();
+        //Création d'un formulaire qui sera lié au $user objet.
         $form = $this->createForm(RegistrationFormType::class, $user);
+        //Traitement de la soumission du formulaire
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
+        // Le mot de passe haché est défini sur l'objet Utilisateur avant d'être enregistré ou mis à jour dans la base de données.
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,
                     $form->get('plainPassword')->getData()
                 )
             );
-
+           // Cette ligne indique à Doctrine EntityManager de persister (sauvegarder) l'objet User dans la base de données
             $entityManager->persist($user);
+            //vide les modifications dans la base de données. Cela enregistre l'utilisateur nouvellement enregistré dans la base de données
             $entityManager->flush();
-
+            $this-> addFlash('success','Votre compte à bien été créer, veuillez vérifier vos e-mails pour l\'activer.');
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
                 (new TemplatedEmail())
-                    ->from(new Address('manichbenali13@gmail.com', 'manel.com'))
+                    ->from(new Address('manichbenali13@gmail.com', 'register@company.com'))
                     ->to($user->getEmail())
-                    ->subject('Please Confirm your Email')
+                    ->subject('Veuillez confirmer votre email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
             return $this->redirectToRoute('app_home');
@@ -80,7 +84,7 @@ class RegistrationController extends AbstractController
         }
 
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
-        $this->addFlash('success', 'Your email address has been verified.');
+        $this->addFlash('success', 'Votre e-mail à bien été vérifier.');
 
         return $this->redirectToRoute('api_login');
     }
