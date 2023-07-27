@@ -28,6 +28,13 @@ class OrderType extends AbstractType
                 'format' => 'yyyy-MM-dd HH:mm:ss',       
                 'attr' => ['placeholder' => 'Enter the paidAt'],
             ])
+            ->add('CreatedAt', DateTimeType::class, [
+                'label' => 'Date et heure :',
+                'widget' => 'single_text',
+                'required' => true,
+                'attr' => ['autocomplete' => 'off'],
+                'input' => 'datetime_immutable'
+            ])
         
             ->add('amount', MoneyType::class, [
                 'label' => 'Montant',

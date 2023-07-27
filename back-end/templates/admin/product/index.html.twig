@@ -10,8 +10,9 @@
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Prix</th>
-                <th>Image</th>
                 <th>Categorie</th>
+                <th>Créer le :</th>
+                <th>Image</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -22,13 +23,13 @@
                 <td>{{ product.name }}</td>
                 <td>{{ product.price|number_format(2, ',', '.') }} €</td>
                 <td>{{ product.category}}</td>
+                <td>{{ product.CreatedAt|date('d/m/Y')}}</td>
                 <td>
                     {% if product.image %}
                         <img src="{{ asset('uploads/' ~ product.image) }}" class="img-fluid" alt="{{ product.name }}" style="max-width: 200px; height: auto;" />
                     {% endif %}
                 </td>
                 <td>
-                    <a href="{{ path('admin_product_show', {'id': product.id}) }}" class="btn">Regarder</a>
                     <a href="{{ path('admin_product_edit', {'id': product.id}) }}" class="btn">Modifier</a>
                     <a href="{{ path('admin_product_delete', {'id': product.id}) }}" class="btn">Supprimer</a>
                 </td>

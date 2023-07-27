@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class UserType extends AbstractType
 {
@@ -19,6 +20,13 @@ class UserType extends AbstractType
             'attr' => 
                 [ 'placeholder' => 'Entrez votre adresse e-mail',
                 ],
+            ])
+            ->add('CreatedAt', DateTimeType::class, [
+                'label' => 'Date et heure :',
+                'widget' => 'single_text',
+                'required' => true,
+                'attr' => ['autocomplete' => 'off'],
+                'input' => 'datetime_immutable',
             ])
         ->add(
             'isVerified',CheckboxType::class, [

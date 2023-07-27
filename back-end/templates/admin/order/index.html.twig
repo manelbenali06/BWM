@@ -10,6 +10,7 @@
                 <th>Id</th>
                 <th>Reference</th>
                 <th>Payé le:</th>
+                <td>Créer le:</td>
                 <th>Montant de la commande</th>
                 <th>actions</th>
             </tr>
@@ -20,6 +21,7 @@
                 <td>{{ order.id }}</td>
                 <td>{{ order.reference }}</td>
                 <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ order.CreatedAt|date('d/m/Y') }}</td>
                 <td>{{ (order.amount)|number_format(2, ',', '.') }}€</td>
                 <td>
                     <a href="{{ path('admin_order_show', {'id': order.id}) }}"class="btn">Regarder</a>

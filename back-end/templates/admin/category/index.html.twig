@@ -9,6 +9,7 @@
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
+                <th>Créer le:</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -17,8 +18,8 @@
             <tr>
                 <td>{{ category.id }}</td>
                 <td>{{ category.name }}</td>
+                <td>{{ category.CreatedAt|date('d/m/Y') }}</td>
                 <td>
-                    <a href="{{ path('admin_category_show', {'id': category.id}) }}"class="btn">Regarder</a>
                     <a href="{{ path('admin_category_edit', {'id': category.id}) }}"class="btn">Modifier</a>
                     <a href="{{ path('admin_category_delete', {'id': category.id}) }}"class="btn">Supprimer</a>
             </tr>

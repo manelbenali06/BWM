@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
@@ -36,9 +37,13 @@ class Product
     #[ORM\OneToMany(mappedBy: 'product', targetEntity: OrderItem::class)]
     private Collection $orderItems;
 
+    #[ORM\Column]
+    private ?DateTimeImmutable $CreatedAt = null;
+
     public function __construct()
     {
         $this->orderItems = new ArrayCollection();
+        $this->CreatedAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -139,4 +144,17 @@ class Product
 
         return $this;
     }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->CreatedAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $CreatedAt): static
+    {
+        $this->CreatedAt = $CreatedAt;
+
+        return $this;
+    }
+   
 }
