@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-#[Route('/product')]
+#[Route('/produits')]
 
 class ProductController extends AbstractController
 {
@@ -25,6 +25,25 @@ class ProductController extends AbstractController
     {
         return $this->render('product/show.html.twig', [
         'product' => $product,
-    ]);
+        ]);
+    }
+
+    #[Route('/{name}', name: 'product_search')]
+    public function searchProductByName(string $name): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        
+        // Utilisation d'une requête paramétrée pour rechercher le produit par son nom
+        $query = $entityManager->createQuery(
+            'SELECT p
+            FROM App\Entity\Product p
+            WHERE p.name = :name'
+        )->setParameter('name', $name);
+
+        $product = $query->getResult();
+
+        return $this->render('product/search_result.html.twig', [
+            'product' => $product,
+        ]);
     }
 }

@@ -7,5 +7,5 @@ auth:
     methods: [POST]
     
 app_product_index:
-    path: /products
+    path: /produits
     controller: App\Controller\ProductController::index

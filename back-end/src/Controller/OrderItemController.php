@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-#[Route('/order_item', name:'order_item_')]
+#[Route('/détail_commande', name:'order_item_')]
 class OrderItemController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]

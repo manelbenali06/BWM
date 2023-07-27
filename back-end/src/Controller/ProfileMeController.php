@@ -8,13 +8,16 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-
+#[Route('/utilisateur/profile')]
 class ProfileMeController extends AbstractController
 {
-    #[Route('/user/profile', name: 'app_profile')]
+    
+    #[Route('/', name: 'app_profile')]
+ 
     public function index(OrderRepository $orderRepository): Response
     {
         $user = $this->getUser();
@@ -26,7 +29,7 @@ class ProfileMeController extends AbstractController
         ]);
     }
                 
-    #[Route('/profile/edit', name: 'edit_profile')]     
+    #[Route('/modifier', name: 'edit_profile')]     
     public function edit(Request $request, EntityManagerInterface $entityManager): Response
     {   
         $user = $this->getUser();
@@ -45,7 +48,7 @@ class ProfileMeController extends AbstractController
         ]);
     }
     
-    #[Route('/profile/edit-password', name: 'edit_password')]     
+    #[Route('/modifer-mot-de-passe', name: 'edit_password')]     
     public function editPassword(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher): Response
     {   
         $user = $this->getUser();

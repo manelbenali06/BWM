@@ -13,7 +13,7 @@ class CartController extends AbstractController
     
 
     /**
-     * @Route("/cart", name="app_cart_index")
+     * @Route("/panier", name="app_cart_index")
      */
     public function index(CartService $cartService): Response
 {
@@ -25,7 +25,7 @@ class CartController extends AbstractController
     ]);
 }
     /**
-     * @Route("/cart/add/{id}", name="app_cart_add")
+     * @Route("/panier/add/{id}", name="app_cart_add")
      */
     public function add(Product $product, CartService $cartService): Response
     {
@@ -34,7 +34,7 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/cart/delete/{id}", name="app_cart_delete")
+     * @Route("/panier/delete/{id}", name="app_cart_delete")
      */
     public function delete(Product $product, CartService $cartService): Response
     {
@@ -43,7 +43,7 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/cart/clear", name="app_cart_clear")
+     * @Route("/panier/clear", name="app_cart_clear")
      */
     public function clear(CartService $cartService): Response
     {
@@ -52,7 +52,7 @@ class CartController extends AbstractController
     }
    
     /**
-     * @Route("/cart/increase/{id}", name="app_cart_increase")
+     * @Route("/panier/increase/{id}", name="app_cart_increase")
      */
     public function increaseQuantity(Product $product, CartService $cartService): Response
     {
@@ -61,7 +61,7 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/cart/decrease/{id}", name="app_cart_decrease")
+     * @Route("/panier/decrease/{id}", name="app_cart_decrease")
      */
     public function decreaseQuantity(Product $product, CartService $cartService): Response
     {
