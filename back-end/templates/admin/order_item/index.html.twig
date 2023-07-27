@@ -11,6 +11,7 @@
                 <th>Nom du produit</th>
                 <th>Prix du produit</th>
                 <th>Quantités commandés</th>
+                <th>Créer le:</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -21,6 +22,7 @@
                 <td>{{ order_item.product }}</td> {# Assurez-vous que la propriété product de l'entité OrderItem correspond au nom du produit #}
                 <td>{{ order_item.product.price|number_format(2, ',', '.') }}€</td>
                 <td>{{ order_item.quantity }}</td>
+                 <td>{{ order_item.CreatedAt|date('d/m/Y') }}</td>
                 <td>
                     <a href="{{ path('admin_order_item_show', {'id': order_item.id}) }}"class="btn">Regarder</a>
                    

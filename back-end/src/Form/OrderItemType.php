@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class OrderItemType extends AbstractType
 {
@@ -24,6 +25,13 @@ class OrderItemType extends AbstractType
             ->add('price', MoneyType::class, [
                 'label' => 'Prix du produit',
                 'currency' => 'EUR'
+            ])
+            ->add('CreatedAt', DateTimeType::class, [
+                'label' => 'Date et heure :',
+                'widget' => 'single_text',
+                'required' => true,
+                'attr' => ['autocomplete' => 'off'],
+                'input' => 'datetime_immutable'
             ])
             ->add('order')
         ;

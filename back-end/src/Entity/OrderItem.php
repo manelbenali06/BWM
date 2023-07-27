@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Entity\Order;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\OrderItemRepository;
@@ -23,6 +24,9 @@ class OrderItem
 
     #[ORM\ManyToOne(inversedBy: 'orderItems')]
     private ?Order $order = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $CreatedAt = null;
 
     public function getId(): ?int
     {
@@ -71,6 +75,23 @@ class OrderItem
         $this->order = $order;
 
         return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->CreatedAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $CreatedAt): static
+    {
+        $this->CreatedAt = $CreatedAt;
+
+        return $this;
+    }
+     public function __construct()
+    {
+
+        $this->CreatedAt = new DateTimeImmutable();
     }
     
 }
