@@ -11,6 +11,7 @@
                 <th>Nom</th>
                 <th>Prix</th>
                 <th>Image</th>
+                <th>Categorie</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -19,7 +20,8 @@
             <tr>
                 <td>{{ product.id }}</td>
                 <td>{{ product.name }}</td>
-                <td>{{ product.price }}</td>
+                <td>{{ product.price|number_format(2, ',', '.') }} €</td>
+                <td>{{ product.category}}</td>
                 <td>
                     {% if product.image %}
                         <img src="{{ asset('uploads/' ~ product.image) }}" class="img-fluid" alt="{{ product.name }}" style="max-width: 200px; height: auto;" />
