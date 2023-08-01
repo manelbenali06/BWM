@@ -32,6 +32,7 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, UserAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
         //crée un nouvel utilisateur
+        //$user est l'image de notre formulaire
         $user = new User();
         //Création d'un formulaire a partir du type de formulaire qui sera lié au $user objet.
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -66,6 +67,7 @@ class RegistrationController extends AbstractController
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
+            //créer la vue associé au formulaire avec la methode createView
         ]);
     }
 
