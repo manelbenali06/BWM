@@ -31,11 +31,11 @@ class RegistrationController extends AbstractController
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, UserAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
-        //crée une nouvelle instance de la classe User
+        //crée un nouvel utilisateur
         $user = new User();
-        //Création d'un formulaire qui sera lié au $user objet.
+        //Création d'un formulaire a partir du type de formulaire qui sera lié au $user objet.
         $form = $this->createForm(RegistrationFormType::class, $user);
-        //Traitement de la soumission du formulaire
+        //on demande au formulaire de reccuperer les données à partir de la requette
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
