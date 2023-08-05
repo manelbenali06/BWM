@@ -3,15 +3,15 @@
 {% block title %}Elèments de commande {% endblock %}
 
 {% block body %}
-<h1>Elèments de commande </h1>
+
 <div class="container pt-3">
+<h1>Elèments de commande </h1>
     <table class="table">
         <thead class="thead" style="background-color: #ECBA82;">
             <tr>
                 <th>Nom du produit</th>
                 <th>Prix du produit</th>
                 <th>Quantités commandés</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -20,9 +20,6 @@
                 <td>{{ order_item.product }}</td> {# Assurez-vous que la propriété product de l'entité OrderItem correspond au nom du produit #}
                 <td>{{ order_item.product.price|number_format(2, ',', '.') }}€</td>
                 <td>{{ order_item.quantity }}</td>
-                <td>
-                    <a href="{{ path('order_item_index', {'id': order_item.id}) }}"class="btn ">Regarder</a>
-                </td>
             </tr>
         {% else %}
             <tr>
