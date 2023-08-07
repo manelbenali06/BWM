@@ -94,3 +94,17 @@ footer img {
 .admin-sidebar__link:hover {
   color: hsla(37, 100%, 50%, 0.881);
 }
+
+/* Media query for screens with max-width 768px */
+@media (max-width: 768px) {
+  footer{
+    padding: 10px 0;
+  }
+  footer h2 {
+    font-size: 18px;
+  }
+  
+  footer ul li a {
+    font-size: 15px;
+  }
+}
