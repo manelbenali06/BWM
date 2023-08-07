@@ -5,7 +5,11 @@
 .image-hover:hover {
   transform: translateX(-10px);
 }
-/* Premiere section */
+
+.row .img-carre{
+  margin-top: 1px;
+}
+
   /*Deuxieme section*/
     .title {
       font-size: 15px;
@@ -82,3 +86,42 @@
       margin-bottom: 60px;
     }
   
+/* Styles pour les differentes tailles d'écran*/
+/* Media Query pour les écrans de taille moyenne */
+@media screen and (max-width: 768px) {
+  .prestation .card {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+/* Media Query pour les petits écrans */
+@media screen and (max-width: 480px) {
+  .prestation .card {
+    flex: 0 0 100%;
+  }
+  .prestation .card-img {
+    max-width: 80%; /* Réduire la largeur de l'image pour les petits écrans */
+  }
+}
+@media screen and (max-width: 480px) {
+  .diplome .row {
+    flex-wrap: nowrap; /* Empêcher le renvoi à la ligne */
+    overflow-x: auto; /* Activer le défilement horizontal si nécessaire */
+  }
+  
+  .diplome .card {
+    flex: 0 0 auto; /* Désactiver la flexibilité pour éviter la réduction */
+    margin: 0 10px; /* Espacement entre les cartes */
+    text-align: center;
+    white-space: normal; /* Rétablir le comportement de saut de ligne */
+  }
+  
+  .diplome .card-img {
+    max-width: 60%; /* Réduire la largeur de l'image */
+    display: block;
+    margin: 0 auto; /* Centrer l'image horizontalement */
+  }
+  
+  .diplome .card .card-body {
+    padding: 10px; /* Ajouter un espacement interne au contenu de la carte */
+  }
+}
