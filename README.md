@@ -35,12 +35,7 @@ Lors du clone, il faut :
   
 ## Documentations
 
-L'ensemble des éléments de documentation sont rangés dans [le dossier docs/](./docs). Vous trouverez néanmoins les éléments utiles au quotidien ci-dessous.
-
-### Le [schéma d'entités](./docs/MERSIE/mcd.png)
-
-![](./docs/mcd.svg)
-
+L'ensemble des éléments de documentation sont rangés dans [le dossier docs/](./docs). Vous trouverez les éléments de conception de notre application.
 
 Pour la partie Angular
 ====================
