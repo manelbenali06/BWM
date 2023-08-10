@@ -1,4 +1,4 @@
-Brow with manel Symfony-Angular
+Application e-commerce Symfony-Angular
 ========================
 Pour SYMFONY
 ============
