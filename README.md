@@ -1,6 +1,6 @@
-Application e-commerce Symfony-Angular
+###Application e-commerce Symfony-Angular
 ========================
-Pour SYMFONY
+###Pour SYMFONY
 ============
 Lors du clone, il faut :
 
@@ -32,7 +32,17 @@ Lors du clone, il faut :
     L'admin est :           Login = ..........  Password = .....
     Tous les autres users : Login = voir mails BD   Password = ...
 
-Pour la prtie Angular
+  
+## Documentations
+
+L'ensemble des éléments de documentation sont rangés dans [le dossier docs/](./docs). Vous trouverez néanmoins les éléments utiles au quotidien ci-dessous.
+
+### Le [schéma d'entités](./docs/MERSIE/mcd.png)
+
+![](./docs/mcd.svg)
+
+
+Pour la partie Angular
 ====================
 Ce projet a été généré avec Angular CLI version 16.0.4.
 
