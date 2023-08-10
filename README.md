@@ -1,7 +1,7 @@
-###Application e-commerce Symfony-Angular
+Application e-commerce Symfony-Angular
 ========================
-###Pour SYMFONY
-============
+###Pour la bartie back-end SYMFONY
+=================================
 Lors du clone, il faut :
 
 - Installer les vendors : composer install
