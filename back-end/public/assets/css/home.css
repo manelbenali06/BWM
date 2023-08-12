@@ -59,12 +59,11 @@
   }
   
   /*  Troixième section - prestations- */
-  h1{
-    letter-spacing: .01em;
+  h1.haut{
+    font-weight: bold;
     color: #363636;
     font-size: 42px;
-    line-height: 1.1667em;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
   }
   .card-title{
     letter-spacing: .01em;
