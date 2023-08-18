@@ -13,7 +13,7 @@ import { OrdersComponent } from './modules/pages/orders/orders.component';
 import { CartComponent } from './modules/pages/cart/cart.component';
 import { PaymentComponent } from './modules/pages/payment/payment.component';
 import { LoginComponent } from './modules/pages/login/login.component';
-import { ProfileComponent } from './modules/pages/profile/profile.component';
+import { ProfileComponent } from './modules/pages/-profile/profile.component';
 
 const routes: Routes = [
   {

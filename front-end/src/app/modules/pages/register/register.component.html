@@ -21,7 +21,7 @@
              [class.has-error]="lastName.invalid && lastName.touched"
              [class.has-success]="lastName.valid">
           <input type="text" id="lastName" name="lastName"
-                 [(ngModel)]="user.lastName" #lastName="ngModel" required
+                 [(ngModel)]="user.lastname" #lastName="ngModel" required
                  class="form-control" placeholder="Saisissez votre nom.">
         </div>
 
@@ -29,7 +29,7 @@
              [class.has-error]="firstName.invalid && firstName.touched"
              [class.has-success]="firstName.valid">
           <input type="text" id="firstName" name="firstName"
-                 [(ngModel)]="user.firstName" #firstName="ngModel" required
+                 [(ngModel)]="user.firstname" #firstName="ngModel" required
                  class="form-control" placeholder="Saisissez votre prénom.">
         </div>
 
@@ -47,7 +47,7 @@
 
         <div class="form-group" [class.has-error]="zipCode.invalid && zipCode.touched">
           <input type="text" id="zipCode" name="zipCode"
-                 [(ngModel)]="user.zipCode" #zipCode="ngModel"
+                 [(ngModel)]="user.zipcode" #zipCode="ngModel"
                  class="form-control" required placeholder="Saisissez votre code postal.">
         </div>
 

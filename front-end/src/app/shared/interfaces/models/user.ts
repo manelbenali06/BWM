@@ -5,9 +5,9 @@ export class User{
   roles:any = ["ROLE_USER"];
   password:string;
   is_verified:boolean =true;
-  lastName: string;
-  firstName: string;
+  lastname: string;
+  firstname: string;
   address:string;
-  zipCode:number
+  zipcode:number
   city:string;
 }
