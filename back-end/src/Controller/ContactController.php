@@ -17,7 +17,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
-    #[IsGranted('ROLE_USER')]
     public function contact(Request $request, MailerInterface $mailer,EntityManagerInterface $entityManager): Response
     {
         $contact = new Contact();
