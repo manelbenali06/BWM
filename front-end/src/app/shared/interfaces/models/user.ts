@@ -8,6 +8,6 @@ export class User{
   lastname: string;
   firstname: string;
   address:string;
-  zipcode:number
+  zipcode:number;
   city:string;
 }
