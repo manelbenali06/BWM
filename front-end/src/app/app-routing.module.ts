@@ -14,6 +14,7 @@ import { CartComponent } from './modules/pages/cart/cart.component';
 import { PaymentComponent } from './modules/pages/payment/payment.component';
 import { LoginComponent } from './modules/pages/login/login.component';
 import { ProfileComponent } from './modules/pages/-profile/profile.component';
+import { AdminProductsComponent } from './modules/pages/admin-products/admin-products.component';
 
 const routes: Routes = [
   {
@@ -85,6 +86,11 @@ const routes: Routes = [
     //localhost:4200
     path:'profile',
     component: ProfileComponent
+  },
+  {
+    //localhost:4200
+    path:'admin_produits',
+    component: AdminProductsComponent
   },
 
 

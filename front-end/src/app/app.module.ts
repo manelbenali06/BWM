@@ -21,6 +21,8 @@ import { OrdersComponent } from './modules/pages/orders/orders.component';
 import { CartComponent } from './modules/pages/cart/cart.component';
 import { CartService } from './core/http/cart/cart.service';
 import { LoginComponent } from './modules/pages/login/login.component';
+import { AdminProductsComponent } from './modules/pages/admin-products/admin-products.component';
+import { AdminProductsEditComponent } from './modules/pages/admin-products-edit/admin-products-edit.component';
 
 //import  { StripeModule }  from  "stripe-angular"
 
@@ -41,7 +43,9 @@ import { LoginComponent } from './modules/pages/login/login.component';
     RegisterComponent,
     OrdersComponent,
     CartComponent,
-    LoginComponent
+    LoginComponent,
+    AdminProductsComponent,
+    AdminProductsEditComponent
 
 
   ],
