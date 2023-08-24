@@ -69,7 +69,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'Nouveau mot de passe'],
                 'constraints' => [
-                    new Regex('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{14,}$/',"Il faut saisir un mot de passe de 14 caractères avec 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial")
+                    new Regex('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{14,}$/', "Il faut saisir un mot de passe de 14 caractères avec 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial")
                 ],
                 'label' => 'Mot de passe'
             ])
