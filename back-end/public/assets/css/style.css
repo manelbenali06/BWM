@@ -2,6 +2,11 @@ body, h5, h2, h1,h4 p {
   font-family: 'Montserrat', sans-serif;
   }
 
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
 /* navbar*/
 .navbar-nav .nav-link {
   font-family:'Montsserat';
