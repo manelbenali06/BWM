@@ -18,8 +18,8 @@
                     {% endif %}
                     <div class="panier card-body">
                         <h5 class="panier card-title">{{ item.product.name }}</h5>
-                        <p class="panier card-text">Price: {{ item.product.price|number_format(2, ',', '.') }}€</p>
-                        <p class="panier card-text">Quantity: {{ item.quantity }}</p>
+                        <p class="panier card-text">Prix: {{ item.product.price|number_format(2, ',', '.') }}€</p>
+                        <p class="panier card-text">Quantité: {{ item.quantity }}</p>
                         <div class="quantity-control">
                             <a href="{{ path('app_cart_decrease', {'id': item.product.id}) }}">
                             <img src="{{ asset('assets/img/minus.png') }}" height="18px" alt="Supprimer mon produit">
