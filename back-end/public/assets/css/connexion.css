@@ -38,12 +38,6 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-<<<<<<< HEAD
-  
-  
-=======
-   
->>>>>>> 8b2fad713b7e7091e4fff88c1ba1fa88881f4730
 @media (max-width: 768px) {
   .container-login {
       flex-direction: column;
