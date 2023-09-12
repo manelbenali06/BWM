@@ -20,6 +20,7 @@
         "sensio/framework-extra-bundle": "^6.2",
         "stof/doctrine-extensions-bundle": "^1.7",
         "stripe/stripe-php": "^10.15",
+        "symfony/apache-pack": "^1.0",
         "symfony/asset": "6.2.*",
         "symfony/console": "6.2.*",
         "symfony/doctrine-messenger": "6.2.*",
