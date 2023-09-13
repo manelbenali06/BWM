@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Order{% endblock %}
+{% block title %}Nouvelle commande{% endblock %}
 
 {% block body %}
-    <h1>Create new Order</h1>
+    <h1>Créer une nouvelle commande</h1>
 
     {{ include('admin/order/_form.html.twig') }}
 
-    <a href="{{ path('admin_order_index') }}">back to list</a>
+    <a href="{{ path('admin_order_index') }}">Revenir à la liste</a>
 {% endblock %}

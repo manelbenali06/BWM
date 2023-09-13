@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}OrderItem {% endblock %}
+{% block title %}Elèments de commande {% endblock %}
 
 {% block body %}
-    <h1>OrderItem </h1>
+    <h1>Elèments de commande </h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Quantity</th>
+                <th>Quantités commandés</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,18 +19,18 @@
                 <td>{{ order_item.id }}</td>
                 <td>{{ order_item.quantity }}</td>
                 <td>
-                    <a href="{{ path('admin_order_item_show', {'id': order_item.id}) }}">show</a>
+                    <a href="{{ path('admin_order_item_show', {'id': order_item.id}) }}"class="btn btn-primary btn-sm">Regarder</a>
                    
-                    <a href="{{ path('admin_order_item_delete', {'id': order_item.id}) }}">supprimer</a>
+                    <a href="{{ path('admin_order_item_delete', {'id': order_item.id}) }}"class="btn btn-secondary btn-sm">supprimer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucun element de commande</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('admin_order_item_new') }}">Create new</a>
+    <a href="{{ path('admin_order_item_new') }}"class="btn btn-success">Créer un nouvel élément de commande</a>
 {% endblock %}

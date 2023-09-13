@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% block title %}Utilisateur{% endblock %}
 
 {% block body %}
    <div class="container">
-    <h1>User index</h1>
+    <h1>Utilisateur</h1>
 
     <table class="table">
         <thead class="thead-dark">
             <tr>
                 <th>Id</th>
                 <th>Email</th>
-                <th>IsVerified</th>
+                <th>Est-il vérifié?</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -20,22 +20,22 @@
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+                <td>{{ user.isVerified ? 'Oui' : 'Non' }}</td>
                 <td>
-                    <a href="{{ path('admin_user_show', {'id': user.id}) }}" class="btn btn-primary btn-sm">Show</a>
-                    <a href="{{ path('admin_user_edit', {'id': user.id}) }}" class="btn btn-secondary btn-sm">Edit</a>
-                    <a href="{{ path('admin_user_delete', {'id': user.id}) }}" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="{{ path('admin_user_show', {'id': user.id}) }}" class="btn btn-primary btn-sm">Regarder</a>
+                    <a href="{{ path('admin_user_edit', {'id': user.id}) }}" class="btn btn-secondary btn-sm">Modifier</a>
+                    <a href="{{ path('admin_user_delete', {'id': user.id}) }}" class="btn btn-danger btn-sm">Supprimer</a>
                 </td>
             </tr>
             {% else %}
             <tr>
-                <td colspan="4">No records found</td>
+                <td colspan="4">Aucun utilisateur</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('admin_user_new') }}" class="btn btn-success">Create new</a>
+    <a href="{{ path('admin_user_new') }}" class="btn btn-success">Créer  un nouvel utilisateur</a>
 </div>
 
 {% endblock %}
