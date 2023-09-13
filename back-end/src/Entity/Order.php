@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\OrderRepository;
 use ApiPlatform\Metadata\ApiResource;
@@ -18,27 +19,28 @@ class Order
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $reference = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $paidAt = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $paymentId = null;
+    private ?\DateTime $paidAt = null;
 
     #[ORM\Column]
     private ?float $amount = null;
 
-    #[ORM\OneToMany(mappedBy: 'purchase', targetEntity: OrderItem::class)]
+    #[ORM\OneToMany(mappedBy: 'order', targetEntity: OrderItem::class)]
     private Collection $orderItems;
 
     #[ORM\ManyToOne(inversedBy: 'orders')]
     private ?User $user = null;
 
+    #[ORM\Column]
+    private ?\DateTimeImmutable $CreatedAt = null;
+
     public function __construct()
     {
         $this->orderItems = new ArrayCollection();
+        $this->CreatedAt = new DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -58,29 +60,18 @@ class Order
         return $this;
     }
 
-    public function getPaidAt(): ?\DateTimeImmutable
+    public function getPaidAt(): ?\DateTime
     {
         return $this->paidAt;
     }
 
-    public function setPaidAt(\DateTimeImmutable $paidAt): self
+    public function setPaidAt(\DateTime $paidAt): self
     {
         $this->paidAt = $paidAt;
 
         return $this;
     }
 
-    public function getPaymentId(): ?string
-    {
-        return $this->paymentId;
-    }
-
-    public function setPaymentId(string $paymentId): self
-    {
-        $this->paymentId = $paymentId;
-
-        return $this;
-    }
 
     public function getAmount(): ?float
     {
@@ -106,7 +97,7 @@ class Order
     {
         if (!$this->orderItems->contains($orderItem)) {
             $this->orderItems->add($orderItem);
-            $orderItem->setPurchase($this);
+            $orderItem->setOrder($this);
         }
 
         return $this;
@@ -116,8 +107,8 @@ class Order
     {
         if ($this->orderItems->removeElement($orderItem)) {
             // set the owning side to null (unless already changed)
-            if ($orderItem->getPurchase() === $this) {
-                $orderItem->setPurchase(null);
+            if ($orderItem->getOrder() === $this) {
+                $orderItem->setOrder(null);
             }
         }
 
@@ -140,4 +131,17 @@ class Order
     {
         return $this->reference;
     }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->CreatedAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $CreatedAt): static
+    {
+        $this->CreatedAt = $CreatedAt;
+
+        return $this;
+    }
+   
 }

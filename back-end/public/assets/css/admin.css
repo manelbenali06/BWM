@@ -1,0 +1,27 @@
+/* Style général du menu de navigation */
+.admin-sidebar {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 15px;
+  }
+  
+  /* Style des titres */
+  .admin-sidebar__title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  /* Style des liens */
+.admin-sidebar__link {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .admin-sidebar__link:hover {
+    color: hsla(37, 100%, 50%, 0.881);
+  }
+  .centered-cards{
+    margin-top: 0.2rem !important;
+  }

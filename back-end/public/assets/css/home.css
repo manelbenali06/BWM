@@ -1,0 +1,201 @@
+  /* Carroussel */
+  .image-hover {
+    transition: transform 0.3s ease;
+  }
+  .image-hover:hover {
+    transform: translateX(-10px);
+  }
+
+  .row .img-carre{
+    margin-top: 1px;
+  }
+
+  /*Deuxieme section*/
+  .title {
+    font-size: 15px;
+    color: #333;
+     margin-bottom: 40px;
+  }
+  .card-text{
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.7em;
+    letter-spacing: .15em;
+    color: #8e8987;
+  }
+  .subtitle {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.7em;
+    letter-spacing: .15em;
+    color: #8e8987;
+    margin-bottom: 60px;
+  }
+  .description {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 40px;
+  }
+  .btn {
+    background-color: #4a4e53;
+    color: #fff;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+  }
+  .btn:hover {
+    border: 1px solid white;
+  } 
+  .btn:active {
+    box-shadow: 4px 4px 12px #c5c5c5,
+                -4px -4px 12px #ffffff;
+  }
+  
+  /*  Troixième section - prestations- */
+  h1.haut{
+    font-weight: bold;
+    color: #363636;
+    font-size: 42px;
+    padding-bottom: 3rem;
+  }
+  .card-title{
+    letter-spacing: .01em;
+    color: #363636;
+    font-size: 20px;
+    line-height: 1.21em;
+    font-weight: 700;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.7em;
+    letter-spacing: .15em;
+    color: #8e8987;
+    margin-bottom: 60px;
+  }
+ 
+  
+/* MEDIA QUERY*/
+
+/* Media query for screens with max-width 768px */
+@media (max-width: 991px) {
+  .carroussel {
+    padding: 10px 0;
+  }
+
+  .img-carre {
+    margin-top: 10px;
+    padding-bottom: 3px;
+  }
+  
+  .img-carre .col-6 {
+    padding-top: 5px;
+  }
+}
+  /*  Troixième section - prestations- */
+  @media screen and (max-width: 768px) {
+    .prestation .card {
+      flex: 0 0 calc(50% - 20px);
+    }
+    .prestation .card-title{
+      font-size: 13px;
+    }
+    .prestation .card-subtitle {
+      font-size: 10px;
+    }
+    .prestation h1{
+      font-size: 23px; 
+    }
+  }
+  /*  Cinquième section - Diplome- */
+  @media (max-width: 768px) {
+    .diplome .card{
+      flex-wrap: nowrap; 
+      flex: 0 0 calc(33.33% - 10px); 
+    }
+    .diplome .card-title {
+      font-size: 12px;
+      white-space: nowrap; 
+      overflow: hidden ;
+      text-overflow: ellipsis; 
+      }
+    .diplome-cards .card-text {
+      font-size: 10px;
+    }
+  }
+
+  /* Media query max-width 768px */
+@media (max-width: 768px) {
+  .salon {
+    padding-top: 2rem;
+  }
+  .card-body {
+    text-align: center;
+  }
+  .card-title {
+    font-size: 14px !important;
+  }
+  p {
+    font-size: 13px ;
+  }
+}
+
+  /* Ecran Mobil */
+  /*  Troixième section - prestations- */
+  @media screen and (max-width: 480px) {
+    .prestation{
+      padding-top: 2rem;
+    }
+    .card {
+      flex: 0 0 calc(50% - 20px);
+    }
+    .card-title{
+      font-size: 10px;
+    }
+    .card-subtitle {
+      font-size: 8px;
+    }
+    h1{
+      font-size: 12px !important; 
+    }
+  }
+  /*  Cinquième section - Diplome- */
+  @media (max-width: 480px) {
+    .diplome .card-title {
+      font-size: 10px;
+      white-space: nowrap;
+      overflow: hidden ;
+      text-overflow: ellipsis; 
+      }
+    .diplome-cards .card-text {
+      font-size: 8px;
+    }
+  }
+  /* Media query for mobile screens */
+  @media (max-width: 480px) {
+    .salon {
+      padding-top: 3rem;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .card-text {
+      font-size: 0.9rem;
+    }
+    .card-text ul li {
+      margin-bottom: 0.3rem;
+    }
+    .card-text ul li i {
+      margin-right: 0.3rem;
+    }
+  }
+

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-BT5lvEiAgVhzMKOfW0bCPISBWlnToZcBl1nDkEJ4BCqPbBzVGGT+YfFr0L28KnVQm7+xmKSpM/9yAtEoW8KzhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block body %}
+<div class="container-cart">
+    <div class="row panier-body justify-content-center align-items-center">
+        {% for item in cart %}
+            <div class="col-md-4 d-flex">
+                <div class="panier-card small-card">
+                    {% if item.product.image %}
+                        <img src="{{ asset('uploads/' ~ item.product.image) }}" class="w-100" alt="{{ item.product.name }}">
+                    {% endif %}
+                    <div class="panier card-body">
+                        <h5 class="panier card-title">{{ item.product.name }}</h5>
+                        <p class="panier card-text">Prix: {{ item.product.price|number_format(2, ',', '.') }}€</p>
+                        <p class="panier card-text">Quantité: {{ item.quantity }}</p>
+                        <div class="quantity-control">
+                            <a href="{{ path('app_cart_decrease', {'id': item.product.id}) }}">
+                            <img src="{{ asset('assets/img/minus.png') }}" height="18px" alt="Supprimer mon produit">
+                            </a>
+                            <a href="{{ path('app_cart_increase', {'id': item.product.id}) }}">
+                            <img src="{{ asset('assets/img/plus.png') }}" height="18px" alt="Ajouter un produit">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex">
+                <div class="panier-card">
+                    {% if cart|length > 0 %}
+                        <div class="cart-actions">
+                            <p class="panier card-text-text">Description: <br>{{ item.product.description }}</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="panier card-text">Total à payer : {{ (totalAmount)|number_format(2, ',', '.') }} €</p>
+                            <a href="{{ path('app_payment_redirect') }}" class="btn">Payer</a>
+                            <a href="{{ path('app_product_index') }}" class="btn">Retour à la liste</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            <div class="col">
+                <p class="text-center">Votre panier est vide</p>
+                <a href="{{ path('app_product_index') }}" class="btn">Retour à la liste</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

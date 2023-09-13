@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Historique de Commande{% endblock %}
+
+{% block body %}
+
+ <div class="container pt-3">
+ <h1>Historique de Commande </h1>
+    <table class="table">
+        <thead class="thead" style="background-color: #ECBA82;">
+            <tr>  
+                <th>Reference</th>
+                <th>Payé le:</th>
+                <th>Créer le:</th>
+                <th>Montant de la commande</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                
+                <td>{{ order.reference }}</td>
+                <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ order.CreatedAt|date('d/m/Y') }}</td>
+                <td>{{ (order.amount)|number_format(2, ',', '.') }}€</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune commande</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('app_home') }}"class="btn">Retour à l'acceuil</a>
+    <a href="{{ path('order_item_index') }}"class="btn">Voir le détail de la commande</a>
+</div>
+{% endblock %}

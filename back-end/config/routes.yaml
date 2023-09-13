@@ -2,7 +2,10 @@ controllers:
     resource: ../src/Controller/
     type: attribute
 
-
 auth:
     path: /auth
-    methods: ['POST']        
+    methods: [POST]
+    
+app_product_index:
+    path: /produits
+    controller: App\Controller\ProductController::index
