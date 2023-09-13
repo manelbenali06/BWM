@@ -2,39 +2,18 @@
 
 namespace App\Entity;
 
-use DateTimeImmutable;
-use ApiPlatform\Metadata\Put;
-use ApiPlatform\Metadata\Delete;
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
-use App\Controller\Api\MeController;
-use ApiPlatform\Metadata\ApiResource;
-use ApiPlatform\Metadata\GetCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use ApiPlatform\Metadata\ApiResource;
 
+#[ApiResource]
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[UniqueEntity(fields: ['email'], message: 'Il existe déja un compte avec cette email')]
-#[ApiResource(
-    operations: [
-        new GetCollection(
-            uriTemplate: '/me',
-            controller: MeController::class,
-            //security: "is_granted('USER_VIEW', object)",
-            security: "is_granted('ROLE_USER')",
-            name: 'me'
-        ),
-        new \ApiPlatform\Metadata\Post(),
-        new Put(security: "is_granted('USER_EDIT', object)"),
-        new Delete(security: "is_granted('USER_DELETE', object)")
-    ]
-)]
-
-//#[ApiResource(security: "is_granted('ROLE_USER')")]
-//#[Get(security: "is_granted('ROLE_ADMIN') or object == user")]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -75,13 +54,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Order::class)]
     private Collection $orders;
 
-    #[ORM\Column(nullable: true)]
-    private ?DateTimeImmutable $CreatedAt = null;
-
     public function __construct()
     {
         $this->orders = new ArrayCollection();
-        $this->CreatedAt = new \DateTimeImmutable();
     }
 
 
@@ -90,7 +65,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->id;
     }
 
-
+ 
     public function getFirstname(): ?string
     {
         return $this->firstname;
@@ -180,7 +155,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getIsVerified(): bool
+    public function isVerified(): bool
     {
         return $this->isVerified;
     }
@@ -193,7 +168,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
 
-
+   
     public function getAddress(): ?string
     {
         return $this->address;
@@ -264,17 +239,4 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->CreatedAt;
-    }
-
-    public function setCreatedAt(?\DateTimeImmutable $CreatedAt): static
-    {
-        $this->CreatedAt = $CreatedAt;
-
-        return $this;
-    }
-  
 }

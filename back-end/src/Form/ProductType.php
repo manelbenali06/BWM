@@ -12,7 +12,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ProductType extends AbstractType
@@ -31,13 +30,6 @@ class ProductType extends AbstractType
             ->add('price', NumberType::class, [
                 'label' => 'Prix',
                 'scale' => 2
-            ])
-            ->add('CreatedAt', DateTimeType::class, [
-                'label' => 'Date et heure :',
-                'widget' => 'single_text',
-                'required' => true,
-                'attr' => ['autocomplete' => 'off'],
-                'input' => 'datetime_immutable'
             ])
             ->add('category', EntityType::class, [
                 'label' => 'Catégorie',

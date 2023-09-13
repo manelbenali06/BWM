@@ -4,12 +4,11 @@
 
 {% block body %}
    
-    <section class="container">
+        <section class="container">
         <div class="row">
             <div class="col">
-              <h1 class="custom-h1">Créer un compte</h1>
-            <!--Pour afficher la propiriété registrationForm défini dans notre controleur on doit lui passer une methode qui va l'afficher 
-            sur twig 'form' -->
+                <h1>Inscription</h1>
+
                 {{ form_start(registrationForm) }}
                     <fieldset class="mb-3">
                         <legend>Mon identité</legend>
@@ -25,17 +24,14 @@
                         {{ form_row(registrationForm.city) }}
                     </fieldset>
                     {{ form_row(registrationForm.plainPassword, {
-                        label: 'Mot de passe'
+                        label: 'Password'
                     }) }}
                    {{ form_row(registrationForm.agreeTerms) }}
 
-                    <button type="submit" class="btn">M'inscrire</button>
-                    <a href="{{ path('app_login') }}" class="btn">Me connecter</a>
+                    <button type="submit" class="btn btn-primary btn-lg my-3">M'inscrire</button>
+                    <a href="{{ path('app_login') }}" class="btn btn-secondary">Me connecter</a>
                 {{ form_end(registrationForm) }}            
             </div>
         </div>
-        {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
     </section>
 {% endblock %}

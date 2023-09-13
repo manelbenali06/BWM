@@ -8,10 +8,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-
 
 class OrderType extends AbstractType
 {
@@ -23,19 +21,15 @@ class OrderType extends AbstractType
                 'attr' => ['placeholder' => 'Entrez le numéro de référence']
             ])
             ->add('paidAt', DateTimeType::class, [
-                   
-                'html5' => false,
-                'format' => 'yyyy-MM-dd HH:mm:ss',       
-                'attr' => ['placeholder' => 'Enter the paidAt'],
-            ])
-            ->add('CreatedAt', DateTimeType::class, [
-                'label' => 'Date et heure :',
+                'label' => 'Date de paiement',
                 'widget' => 'single_text',
-                'required' => true,
-                'attr' => ['autocomplete' => 'off'],
-                'input' => 'datetime_immutable'
+                'format' => 'yyyy-MM-dd HH:mm:ss'
             ])
-        
+            ->add('paidAt', DateTimeType::class, [
+                'label' => 'Date de paiement',
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd HH:mm:ss'
+            ])
             ->add('amount', MoneyType::class, [
                 'label' => 'Montant',
                 'currency' => 'EUR'

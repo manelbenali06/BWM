@@ -1,89 +1,177 @@
-body, h5, h2, h1,h4 p {
-  font-family: 'Montserrat', sans-serif;
-  }
 
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-  }
-/* navbar*/
-.navbar-nav .nav-link {
-  font-family:'Montsserat';
-  font-size: 20px;
+/* admin-sidebar.css */
+
+.admin-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 20px;
 }
-.container .navbar-brand{
-  font-family:'Montsserat';
-  font-size: 22px;
+
+.admin-sidebar__title {
+    font-weight: bold;
+}
+
+.admin-sidebar__link {
+    color: #000;
+    text-decoration: none;
+}
+
+.admin-sidebar__link:hover {
+    color: #007bff;
+}
+
+/* UTILISATEUR*/
+/*PAGE PRODUIT*/
+.custom-class {
+  max-width: 400px; /* Modifier cette valeur selon vos besoins */
+  margin: 0 auto; /* Optionnel : centrer la div horizontalement */
+}
+
+
+.pricing-item {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-family: Catamaran,sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.7em;
+  letter-spacing: .15em;
+}
+
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/*******HEADER*******/
+.navbar-expand-lg {
+ background-color: #F5F5F5;
 }
 
 /*footer*/
-footer.container-fluid {
-  background-color: #ECBA82;
-  color: #fff;
-  padding: 5px;
+.container-fluid{
+  background-color: #F5F5F5;
 }
 
-footer h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  font-family:'Montsserat';
+
+/* PAGE Acceuil*/
+/*Carroussel*/
+
+.image-hover {
+  transition: transform 0.3s ease;
 }
 
-footer ul {
-  list-style: none;
-  padding: 0;
+.image-hover:hover {
+  transform: translateX(-10px);
 }
 
-footer ul li {
-  margin-bottom: 10px;
-}
 
-footer ul li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-family: 'Montserrat';
-  font-size: 20px;
-}
+/*Deuxieme section*/
 
-footer ul li a:hover {
-  color: #DC772E;
-}
-
-footer .text-center {
-  text-align: center;
-}
-
-footer img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Style des cartes */
-.card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 15px;
-  transition: background-color 0.2s, transform 0.2s;
-}
-
-.card:hover {
-  background-color: #f9f9f9;
-  transform: translateY(-5px);
-}
-
-/* Media query for screens with max-width 768px */
-@media (max-width: 768px) {
-  footer{
-    padding: 10px 0;
+  .title {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 40px;
   }
-  footer h2 {
-    font-size: 18px;
+  .card-text{
+    font-family: Catamaran,sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.7em;
+    letter-spacing: .15em;
+    color: #8e8987;
+  }
+  .subtitle {
+    font-family: Catamaran,sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.7em;
+    letter-spacing: .15em;
+    color: #8e8987;
+    margin-bottom: 60px;
   }
   
-  footer ul li a {
-    font-size: 15px;
+  .description {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 40px;
   }
+  
+  .btn {
+    background-color: #4a4e53;
+    color: #fff;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+  }
+  .btn:hover {
+    border: 1px solid white;
+  }
+  
+.btn:active {
+  box-shadow: 4px 4px 12px #c5c5c5,
+              -4px -4px 12px #ffffff;
+  }
+
+/* la troixième section */
+
+
+
+/*  section prestations */
+  h1{
+    font-family: Cormorant,serif;
+    letter-spacing: .01em;
+    color: #363636;
+    font-size: 42px;
+    line-height: 1.1667em;
+    font-weight: 600;
+  }
+.card-title{
+  font-family: Cormorant,serif;
+    letter-spacing: .01em;
+    color: #363636;
+    font-size: 20px;
+    line-height: 1.21em;
+    font-weight: 700;
 }
+
+.card-subtitle {
+  font-family: Catamaran,sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.7em;
+  letter-spacing: .15em;
+  color: #8e8987;
+  margin-bottom: 60px;
+}
+/* FOOTER */
+.footer-link {
+	text-decoration: underline;
+	color: #8e8987; /* Adjust the color as needed */
+}
+
+

@@ -3,45 +3,61 @@
 {% block title %}Brows with Manel -Studio de beauté{% endblock %}
 
 {% block body %}
-<!-- Premier container -->
 <div class="container">
-  <div class="carroussel">
+  <div class="carroussel pt-5">
     <div class="row">
       <div class="col-lg-6">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+          </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="{{ asset('assets/images/caroussel/2.webp') }}" class="d-block w-100" alt="image1 femme avec beau sourrire">
+              <img src="{{ asset('assets/images/caroussel/2.webp') }}" class="d-block w-100" alt="Image 1">
             </div>
             <div class="carousel-item">
-              <img src="{{ asset('assets/images/caroussel/car.jpeg') }}" class="d-block w-100" alt="image2 femme avec beau sourrire">
+              <img src="{{ asset('assets/images/caroussel/car.jpeg') }}" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ asset('assets/images/caroussel/2.webp') }}" class="d-block w-100" alt="Image 3">
             </div>
           </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="row img-carre">
           <div class="col-6">
-            <img src="{{ asset('assets/images/caroussel/1.webp') }}" alt="image3 femme avec de beaux ongles" class="img-fluid rounded image-hover">
+            <img src="{{ asset('assets/images/caroussel/1.webp') }}" alt="Image 4" class="img-fluid rounded image-hover">
           </div>
         <div class="col-6">
-          <img src="{{ asset('assets/images/caroussel/photo.jpeg') }}" alt="image4 femme avec de beaux ongles" class="img-fluid rounded image-hover">
+          <img src="{{ asset('assets/images/caroussel/photo.jpeg') }}" alt="Image 5" class="img-fluid rounded image-hover">
         </div>
         <div class="col-6 pt-4">
-          <img src="{{ asset('assets/images/caroussel/photo.jpeg') }}" alt="image5 femme avec de beaux ongles" class="img-fluid rounded image-hover">
+          <img src="{{ asset('assets/images/caroussel/photo.jpeg') }}" alt="Image 6" class="img-fluid rounded image-hover">
         </div>
         <div class="col-6 pt-4">
-          <img src="{{ asset('assets/images/caroussel/1.webp') }}" alt="image6 femme avec de beaux ongles" class="img-fluid rounded image-hover">
+          <img src="{{ asset('assets/images/caroussel/1.webp') }}" alt="Image 7" class="img-fluid rounded image-hover">
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <!-- Deuxieme container -->
-  <div class="rendez-vous pt-2">
+  <div class="rendez-vous pt-5">
     <div class="row">
       <div class="col-md-6">
-        <img src="{{ asset('assets/images/Acceuil/couleurs.jpg') }}" class="img-fluid" alt="image de differntes teintes de couleurs">
+        <img src="{{ asset('assets/images/Acceuil/couleurs.jpg') }}" class="img-fluid" alt="...">
       </div>
       <div class="col-md-6 d-flex align-items-center">
         <div class="card-body">
@@ -56,14 +72,15 @@
       </div>
     </div>
   </div>
+
 <!-- Troixieme container -->
-  <div class="prestation">
+  <div class="prestation pt-5">
     <div class="row">
         <div class=" col-12 d-flex align-items-center justify-content-center">
             <h1 class="haut">Retrouvez nos techniques professionnelles</h1>
         </div>
         <div class=" card col-12 col-md-3 border-0">
-          <img src="{{ asset('assets/images/sections/04.png') }}" alt="Image de la prestation BLUSH LIPS & DARK" class="card-img-top">
+          <img src="{{ asset('assets/images/sections/04.png') }}" alt="Image 1" class="card-img-top">
               <div class="card-body text-center">
                 <h5 class="card-subtitle text-center">BLUSH LIPS & DARK LIPS</h5>
                 <h4 class="card-title">Lips Artist</h4>
@@ -71,7 +88,7 @@
               </div>
         </div>
         <div class="card col-12 col-md-3 border-0">
-          <img src="{{ asset('assets/images/sections/03.png') }}" alt="Image de la prestation ombre powder" class="card-img-top">
+          <img src="{{ asset('assets/images/sections/03.png') }}" alt="Image 2" class="card-img-top">
           <div class="card-body text-center">
             <h5 class="card-subtitle text-center">OMBRE POWDER</h5>
             <h4 class="card-title">Brows Artist</h4>
@@ -79,7 +96,7 @@
           </div>
         </div>
         <div class="card col-12 col-md-3 border-0">
-          <img src="{{ asset('assets/images/sections/05.png') }}" alt="Image de la prestation onglerie" class="card-img-top">
+          <img src="{{ asset('assets/images/sections/05.png') }}" alt="Image 3" class="card-img-top">
           <div class="card-body text-center">
             <h5 class="card-subtitle text-center">BEAUTÉ DES ONGLES</h5>
             <h4 class="card-title">Nails</h4>
@@ -87,7 +104,7 @@
           </div>
         </div>
         <div class="card col-12 col-md-3 border-0">
-          <img src="{{ asset('assets/images/sections/06.png') }}" alt="Image de la prestation taches de rousseurs" class="card-img-top">
+          <img src="{{ asset('assets/images/sections/06.png') }}" alt="Image 4" class="card-img-top">
           <div class="card-body text-center">
             <h5 class="card-subtitle text-center">TÂCHES DE ROUSSEURS</h5>
             <h4 class="card-title">Fake Freckles</h4>
@@ -100,7 +117,7 @@
   <div class="salon pt-5">
       <div class="row">
         <div class="col-md-6">
-          <img src="{{ asset('assets/images/Acceuil/salon.jpg') }}" class="img-fluid" alt="Image du studio brows with manel">
+          <img src="{{ asset('assets/images/Acceuil/salon.jpg') }}" class="img-fluid" alt="...">
         </div>
         <div class="col-md-6 d-flex align-items-center">
           <div class="card-body">
@@ -114,51 +131,51 @@
         </div>
       </div>
   </div>
-   <!-- Cinquieme container -->
-  <div class="diplome pb-5">
-    <div class="row diplome-cards">
+  <div class="row pt-5 pb-5">
       <div class="card col-md-4 border-0">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="{{ asset('assets/images/icons/icone-bwk-04.png') }}" class="card-img" alt="image qui represente un diplome de qualité">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Produits de qualité</h5>
-                <p class="card-text">Toutes nos prestations sont réalisées avec les meilleurs produits professionnels.</p>
-              </div>
-            </div>
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ asset('assets/images/icons/icone-bwk-04.png') }}" class="card-img" alt="...">
           </div>
-      </div>
-      <div class="card col-md-4 border-0">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="{{ asset('assets/images/icons/icone-bwk-03.png') }}" class="card-img" alt="image qui represente un symbole d'amour et de smile">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Equipe smile et love</h5>
-                <p class="card-text">Redonner le sourire à nos clients en leur faisant disparaître leurs complexes est notre passion.</p>
-              </div>
-            </div>
-          </div>
-      </div>
-      <div class="card col-md-4 border-0">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="{{ asset('assets/images/icons/icone-bwk-02.png') }}" class="card-img" alt="image qui represente la certification du diplome">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Diplômé à l'international</h5>
-                <p class="card-text">Nos praticiens ont plus d'une dizaine de formations à leur actif.</p>
-              </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Produits de qualité.</h5>
+              <p class="card-text">Toutes nos prestations sont réalisées avec les meilleurs produits professionnels.</p>
             </div>
           </div>
         </div>
     </div>
-  </div>
+
+    <div class="card col-md-4 border-0">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ asset('assets/images/icons/icone-bwk-03.png') }}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Equipe smile et love</h5>
+              <p class="card-text">Redonner le sourire à nos clients en leur faisant disparaître leurs complexes est notre passion.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="card col-md-4 border-0">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ asset('assets/images/icons/icone-bwk-02.png') }}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Diplômé à l'international</h5>
+              <p class="card-text">Nos praticiens ont plus d'une dizaine de formations à leur actif.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 </body>
- {% include "_partials/_footer.html.twig" %}
+</html>
+
 {% endblock %}

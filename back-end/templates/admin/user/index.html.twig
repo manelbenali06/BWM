@@ -3,9 +3,11 @@
 {% block title %}Utilisateur{% endblock %}
 
 {% block body %}
-   <div class="container pt-3">
+   <div class="container">
+    <h1>Utilisateur</h1>
+
     <table class="table">
-        <thead class="thead" style="background-color: #ECBA82;">
+        <thead class="thead-dark">
             <tr>
                 <th>Id</th>
                 <th>Email</th>
@@ -20,9 +22,9 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.isVerified ? 'Oui' : 'Non' }}</td>
                 <td>
-                    <a href="{{ path('admin_user_show', {'id': user.id}) }}" class="btn">Regarder</a>
-                    <a href="{{ path('admin_user_edit', {'id': user.id}) }}" class="btn">Modifier</a>
-                    <a href="{{ path('admin_user_delete', {'id': user.id}) }}" class="btn">Supprimer</a>
+                    <a href="{{ path('admin_user_show', {'id': user.id}) }}" class="btn btn-primary btn-sm">Regarder</a>
+                    <a href="{{ path('admin_user_edit', {'id': user.id}) }}" class="btn btn-secondary btn-sm">Modifier</a>
+                    <a href="{{ path('admin_user_delete', {'id': user.id}) }}" class="btn btn-danger btn-sm">Supprimer</a>
                 </td>
             </tr>
             {% else %}
@@ -33,7 +35,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_user_new') }}" class="btn">Créer  un nouvel utilisateur</a>
+    <a href="{{ path('admin_user_new') }}" class="btn btn-success">Créer  un nouvel utilisateur</a>
 </div>
 
 {% endblock %}

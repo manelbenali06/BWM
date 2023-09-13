@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/categorie', name: 'admin_category_')]
+#[Route('/admin/category', name: 'admin_category_')]
 class AdminCategoryController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
@@ -22,7 +22,7 @@ class AdminCategoryController extends AbstractController
         ]);
     }
 
-    #[Route('/nouvelle', name: 'new', methods: ['GET',"POST"])]
+    #[Route('/new', name: 'new', methods: ['GET',"POST"])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $category = new Category();
@@ -51,7 +51,7 @@ class AdminCategoryController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/modifier', name: 'edit', methods: ['GET','POST'])]
+    #[Route('/{id}/edit', name: 'edit', methods: ['GET','POST'])]
     public function edit(Request $request, Category $category, EntityManagerInterface $entityManager): Response
     {
         //param converter permet de rattacher mon formulaire a mon instance

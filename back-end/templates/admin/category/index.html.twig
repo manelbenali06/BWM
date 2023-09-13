@@ -3,13 +3,13 @@
 {% block title %}Liste des Catégories{% endblock %}
 
 {% block body %}
- <div class="container pt-3">
+ <div class="container">
+    <h1>Categories</h1>
     <table class="table">
-        <thead class="thead" style="background-color: #ECBA82;">
+        <thead class="thead-dark">
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
-                <th>Créer le:</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,10 +18,10 @@
             <tr>
                 <td>{{ category.id }}</td>
                 <td>{{ category.name }}</td>
-                <td>{{ category.CreatedAt|date('d/m/Y') }}</td>
                 <td>
-                    <a href="{{ path('admin_category_edit', {'id': category.id}) }}"class="btn">Modifier</a>
-                    <a href="{{ path('admin_category_delete', {'id': category.id}) }}"class="btn">Supprimer</a>
+                    <a href="{{ path('admin_category_show', {'id': category.id}) }}"class="btn btn-primary btn-sm">Regarder</a>
+                    <a href="{{ path('admin_category_edit', {'id': category.id}) }}"class="btn btn-secondary btn-sm">Modifier</a>
+                    <a href="{{ path('admin_category_delete', {'id': category.id}) }}"class="btn btn-danger btn-sm">Supprimer</a>
             </tr>
         {% else %}
             <tr>
@@ -31,6 +31,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_category_new') }}"class="btn">Créer une nouvelle catégorie</a>
+    <a href="{{ path('admin_category_new') }}"class="btn btn-success">Créer une nouvelle catégorie</a>
     </div>
 {% endblock %}

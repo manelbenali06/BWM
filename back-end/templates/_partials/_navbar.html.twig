@@ -1,56 +1,60 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ECBA82;">
-  <div class="container">
-    <a class="navbar-brand" href="{{ path('app_home') }}">Brows with Manel's</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('app_product_index') }}">Nos prestations</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Informations</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ path('brows_page') }}">BROWS</a></li>
-            <li><a class="dropdown-item" href="{{ path('lips_page') }}">LIPS</a></li>
-            <li><a class="dropdown-item" href="{{ path('freckless_page') }}">FRECKLESS</a></li>
-            <li><a class="dropdown-item" href="{{ path('nails_page') }}">NAILS</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('app_cart_index') }}">Panier</a>
-        </li>
-        {% if is_granted('ROLE_ADMIN') %}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('admin_index')}}">Administrateur</a>
-        </li>
-        {% endif %}
-        {% if app.user %}
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            {{ app.user.email }}
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ path('app_profile') }}">Mon profil</a></li>
-            <li><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
-          </ul>
-        </li>
-        {% else %}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('app_login') }}">S'identifier</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('app_register') }}">S'enregistrer</a>
-        </li>
-        {% endif %}
-      </ul>
-    </div>
-  </div>
-</nav>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path('app_home') }}">Brows with Manel's</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_product_index') }}">Nos prestations</a>
+                </li>
+                  <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"aria-expanded="false">Informations</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ path('brows_page') }}">BROWS</a></li>
+                        <li><a class="dropdown-item" href="{{ path('lips_page') }}">LIPS</a></li>
+                        <li><a class="dropdown-item" href="{{ path('freckless_page') }}">FRECKLESS</a></li>
+                        <li><a class="dropdown-item" href="{{ path('nails_page') }}">NAILS</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Panier</a>
+                </li>
+                {% if is_granted('ROLE_ADMIN') %}
+                     <li class="nav-item">
+                    <a class="nav-link" href="{{ path('admin_index')}}">Administrateur</a>
+                </li>
+                {% endif %}
+                {% if app.user %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            {{ app.user.email }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ path('app_profile') }}">Mon profil</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                        </ul>
+                    </li>
+                {% endif %}
 
+                {% if not app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_login') }}">S'identifer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_register') }}">S'enregistrer</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

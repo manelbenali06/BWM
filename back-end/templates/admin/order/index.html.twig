@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Historique de Commandes{% endblock %}
+{% block title %}Commande{% endblock %}
 
 {% block body %}
- <div class="container pt-3">
-    <table class="table pt-3">
-        <thead class="thead" style="background-color: #ECBA82;">
+    <h1>Commande</h1>
+
+    <table class="table">
+        <thead>
             <tr>
                 <th>Id</th>
                 <th>Reference</th>
                 <th>Payé le:</th>
-                <th>Créer le:</th>
+                <th>PayementId</th>
                 <th>Montant de la commande</th>
                 <th>actions</th>
             </tr>
@@ -21,12 +22,12 @@
                 <td>{{ order.id }}</td>
                 <td>{{ order.reference }}</td>
                 <td>{{ order.paidAt ? order.paidAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ order.CreatedAt|date('d/m/Y') }}</td>
-                <td>{{ (order.amount)|number_format(2, ',', '.') }}€</td>
+                <td>{{ order.paymentId }}</td>
+                <td>{{ order.amount }}</td>
                 <td>
-                    <a href="{{ path('admin_order_show', {'id': order.id}) }}"class="btn">Regarder</a>
-                    <a href="{{ path('admin_order_edit', {'id': order.id}) }}"class="btn">Modifier</a>
-                    <a href="{{ path('admin_order_delete', {'id': order.id}) }}"class="btn">supprimer</a>
+                    <a href="{{ path('admin_order_show', {'id': order.id}) }}"class="btn btn-primary btn-sm">Regarder</a>
+                    <a href="{{ path('admin_order_edit', {'id': order.id}) }}"class="btn btn-secondary btn-sm">Modifier</a>
+                    <a href="{{ path('admin_order_delete', {'id': order.id}) }}"class="btn btn-danger btn-sm">supprimer</a>
                 </td>
             </tr>
         {% else %}
@@ -36,6 +37,6 @@
         {% endfor %}
         </tbody>
     </table>
-    <a href="{{ path('admin_order_new') }}"class="btn">Créer une nouvelle commande</a>
-    </div>
+
+    <a href="{{ path('admin_order_new') }}"class="btn btn-success">Créer une nouvelle commande</a>
 {% endblock %}

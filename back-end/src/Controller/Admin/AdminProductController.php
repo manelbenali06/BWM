@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/produit', name: 'admin_product_')]
+#[Route('/admin/product', name: 'admin_product_')]
 class AdminProductController extends AbstractController
 {
    
@@ -24,7 +24,7 @@ class AdminProductController extends AbstractController
         ]);
     }
 
-    #[Route('/nouveau', name: 'new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, UploadService $uploadService): Response
     {
         $product = new Product();
@@ -61,7 +61,7 @@ class AdminProductController extends AbstractController
     }
 
     
-    #[Route('/{id}/modifier', name: 'edit', methods: ['GET','POST'])]
+    #[Route('/{id}/edit', name: 'edit', methods: ['GET','POST'])]
     public function edit(Request $request, Product $product, EntityManagerInterface $entityManager, UploadService $uploadService): Response
     {
         $form = $this->createForm(ProductType::class, $product);

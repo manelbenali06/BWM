@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Entity\Order;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\OrderItemRepository;
@@ -17,16 +16,13 @@ class OrderItem
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'orderItems')]
-    private ?Product $product = null;
+    private ?product $product = null;
 
     #[ORM\Column]
     private ?int $quantity = null;
 
     #[ORM\ManyToOne(inversedBy: 'orderItems')]
-    private ?Order $order = null;
-
-    #[ORM\Column]
-    private ?\DateTimeImmutable $CreatedAt = null;
+    private ?Order $purchase = null;
 
     public function getId(): ?int
     {
@@ -44,14 +40,6 @@ class OrderItem
 
         return $this;
     }
-    public function getPrice(): ?float
-    {
-        if ($this->product) {
-            return $this->product->getPrice();
-        }
-
-        return null;
-    }
 
     public function getQuantity(): ?int
     {
@@ -65,33 +53,15 @@ class OrderItem
         return $this;
     }
 
-    public function getOrder(): ?Order
+    public function getPurchase(): ?Order
     {
-        return $this->order;
+        return $this->purchase;
     }
 
-    public function setOrder(?Order $order): self
+    public function setPurchase(?Order $purchase): self
     {
-        $this->order = $order;
+        $this->purchase = $purchase;
 
         return $this;
     }
-
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->CreatedAt;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $CreatedAt): static
-    {
-        $this->CreatedAt = $CreatedAt;
-
-        return $this;
-    }
-     public function __construct()
-    {
-
-        $this->CreatedAt = new DateTimeImmutable();
-    }
-    
 }

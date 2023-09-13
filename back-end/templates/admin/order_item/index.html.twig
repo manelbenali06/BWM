@@ -3,15 +3,13 @@
 {% block title %}Elèments de commande {% endblock %}
 
 {% block body %}
- <div class="container pt-3">
-    <table class="table pt-3">
-        <thead class="thead" style="background-color: #ECBA82;">
+    <h1>Elèments de commande </h1>
+
+    <table class="table">
+        <thead>
             <tr>
                 <th>Id</th>
-                <th>Nom du produit</th>
-                <th>Prix du produit</th>
                 <th>Quantités commandés</th>
-                <th>Créer le:</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,14 +17,11 @@
         {% for order_item in order_items %}
             <tr>
                 <td>{{ order_item.id }}</td>
-                <td>{{ order_item.product }}</td> {# Assurez-vous que la propriété product de l'entité OrderItem correspond au nom du produit #}
-                <td>{{ order_item.product.price|number_format(2, ',', '.') }}€</td>
                 <td>{{ order_item.quantity }}</td>
-                 <td>{{ order_item.CreatedAt|date('d/m/Y') }}</td>
                 <td>
-                    <a href="{{ path('admin_order_item_show', {'id': order_item.id}) }}"class="btn">Regarder</a>
+                    <a href="{{ path('admin_order_item_show', {'id': order_item.id}) }}"class="btn btn-primary btn-sm">Regarder</a>
                    
-                    <a href="{{ path('admin_order_item_delete', {'id': order_item.id}) }}"class="btn">supprimer</a>
+                    <a href="{{ path('admin_order_item_delete', {'id': order_item.id}) }}"class="btn btn-secondary btn-sm">supprimer</a>
                 </td>
             </tr>
         {% else %}
@@ -36,6 +31,6 @@
         {% endfor %}
         </tbody>
     </table>
-    <a href="{{ path('admin_order_item_new') }}"class="btn">Créer un nouvel élément de commande</a>
-</div>
+
+    <a href="{{ path('admin_order_item_new') }}"class="btn btn-success">Créer un nouvel élément de commande</a>
 {% endblock %}

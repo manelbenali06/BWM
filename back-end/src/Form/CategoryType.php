@@ -6,7 +6,6 @@ use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class CategoryType extends AbstractType
 {
@@ -15,13 +14,6 @@ class CategoryType extends AbstractType
         $builder
             ->add('name',null,[
                 "label" => 'Nom'
-            ])
-            ->add('CreatedAt', DateTimeType::class, [
-                'label' => 'Date et heure :',
-                'widget' => 'single_text',
-                'required' => true,
-                'attr' => ['autocomplete' => 'off'],
-                'input' => 'datetime_immutable'
             ])
         ;
     }

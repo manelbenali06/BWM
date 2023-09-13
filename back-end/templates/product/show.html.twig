@@ -36,9 +36,9 @@
     </div>
     <div class="card-footer text-center">
         <!-- Bouton "Details" -->
-        <a href="{{ path('app_product_index', {'id': product.id}) }}" class="btn">Retour à la liste</a>
+        <a href="{{ path('app_product_index', {'id': product.id}) }}" class="btn">Retours à la liste</a>
         <!-- Bouton "Ajouter au panier" -->
-        <a href="{{ path('app_cart_add', {'id': product.id}) }}" class="btn">Ajouter au panier</a>
+        <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn">Ajouter au panier</a>
     </div>
 </div>
 {% endblock %}

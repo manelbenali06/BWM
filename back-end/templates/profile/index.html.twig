@@ -1,25 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bienvenu sur votre Profile client{% endblock %}
+{% block title %}Bienvenu sur votre Profile!{% endblock %}
 
 {% block body %}
-<div class="container-profil mt-4">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="profil">
-                <h1 class="text-center">Espace client</h1>
-                <div class="profile-info">
-                    <p><strong>Prénom :</strong> {{ user.firstname }}</p>
-                    <p><strong>Nom :</strong> {{ user.lastname }}</p>
-                    <p><strong>Adresse email :</strong> {{ user.email }}
-                </div>
-            </div>
-            <div class="profile-actions">
-                <a href="{{ path('edit_profile') }}" class="btn">Modifier mes informations</a>
-                <a href="{{ path('edit_password') }}" class="btn">Modifier mon mot de passe</a>
-                <a href="{{ path('order_index') }}" class="btn">Historique de commande</a>      
-            </div>
-        </div>
-    </div>
-</div>
+    <h1>Profile</h1>
+
+    <p>
+   Adresse email : {{ user.email }}     
+    </p>
+    <a href="{{ path('app_forgot_password_request') }}" class="btn btn-primary">Reinitialiser mon mot de passe</a>
+
+    <h1 class="mt-5">Historique des commandes</h1>
+
+   
 {% endblock %}

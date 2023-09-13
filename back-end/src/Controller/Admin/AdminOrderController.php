@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-#[Route('/admin/commande', name:'admin_order_')]
+#[Route('/admin/order', name:'admin_order_')]
 class AdminOrderController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
@@ -21,7 +21,7 @@ class AdminOrderController extends AbstractController
         ]);
     }
 
-    #[Route('/nouvelle', name: 'new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request, OrderRepository $orderRepository): Response
     {
         $order = new Order();
@@ -48,7 +48,7 @@ class AdminOrderController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/modifier', name: 'edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Order $order, OrderRepository $orderRepository): Response
     {
         $form = $this->createForm(OrderType::class, $order);

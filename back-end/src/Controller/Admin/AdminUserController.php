@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-#[Route('/admin/utilisateur', name:'admin_user_')]
+#[Route('/admin/user', name:'admin_user_')]
 class AdminUserController extends AbstractController
 {
   
@@ -24,7 +24,7 @@ class AdminUserController extends AbstractController
     }
 
   
-    #[Route('/nouvel', name: 'new', methods: ['GET','POST'])]
+    #[Route('/new', name: 'new', methods: ['GET','POST'])]
     public function new(Request $request, UserRepository $userRepository): Response
     {
         $user = new User();
@@ -53,7 +53,7 @@ class AdminUserController extends AbstractController
     }
 
    
-    #[Route('/{id}/modifier', name: 'edit', methods: ['GET','POST'])]
+    #[Route('/{id}/edit', name: 'edit', methods: ['GET','POST'])]
     public function edit(Request $request, User $user, UserRepository $userRepository): Response
     {
         $form = $this->createForm(UserType::class, $user);

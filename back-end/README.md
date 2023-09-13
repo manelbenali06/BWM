@@ -1,33 +1,6 @@
 ## installer le projet
 -symfony new --webapp my_app
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ###important si erreur jwt
 https://github.com/lexik/LexikJWTAuthenticationBundle/releases/tag/v2.18.1
 

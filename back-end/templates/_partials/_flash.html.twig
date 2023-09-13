@@ -1,7 +1,0 @@
-{% for label, messages in app.flashes %}
-    {% for message in messages %}
-    <div class="alert alert-success mt-3.{{ label }}">   
-        {{ message|raw }}
-     </div>
-     {% endfor %}
-{% endfor %} 

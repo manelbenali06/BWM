@@ -1,56 +1,48 @@
-<div class="container-fluid">
-    <div class="row centered-cards">
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-header text-white admin-sidebar__title" style="background-color: #ECBA82;">
-            <i class="fas fa-users"></i>Utilisateurs
-          </div>
-          <div class="card-body">
-            <p><a class="admin-sidebar__link" href="{{ path('admin_user_index') }}">Liste des utilisateurs</a></p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-header text-white admin-sidebar__title" style="background-color: #ECBA82;">
-            <i class="fas fa-tags"></i>Catégories
-          </div>
-          <div class="card-body">
-            <p><a class="admin-sidebar__link" href="{{ path('admin_category_index') }}">Liste des catégories</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-header text-white admin-sidebar__title"style="background-color: #ECBA82;">
-            <i class="fas fa-box-open"></i> Produits
-          </div>
-          <div class="card-body">
-            <p><a class="admin-sidebar__link" href="{{ path('admin_product_index') }}">Liste des produits</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-header text-white admin-sidebar__title"style="background-color: #ECBA82;">
-            <i class="fas fa-shopping-cart"></i> Commandes
-          </div>
-          <div class="card-body">
-            <p><a class="admin-sidebar__link" href="{{ path('admin_order_index') }}">Liste des commandes</a></p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-header text-white admin-sidebar__title" style="background-color: #ECBA82;">
-            <i class="fas fa-shopping-basket"></i> Eléments de Commande
-          </div>
-          <div class="card-body">
-            <p><a class="admin-sidebar__link" href="{{ path('admin_order_item_index') }}">Liste des éléments de commandes</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+                <aside class="col-3 order-first border border-light admin-sidebar">
+                    <article class="card mb-2">
+                        <div class="card-header admin-sidebar__title">
+                            <i class="fas fa-users"></i>Utilisateurs
+                        </div>
+                        <div class="card-body">
+                            <p><a class="admin-sidebar__link" href="{{ path('admin_user_index') }}">Liste des utilisateurs</a></p>
+                        </div>
+                    </article>
+
+                    <article class="card mb-2">
+                        <div class="card-header admin-sidebar__title">
+                        <i class="fas fa-tags"></i>Catégories
+                        </div>
+                        <div class="card-body">
+                            <p><a class="admin-sidebar__link" href="{{ path('admin_category_index') }}">Liste des catégories</a></p>
+
+                        </div>
+                    </article>
+
+                    <article class="card mb-2">
+                        <div class="card-header admin-sidebar__title">
+                            <i class="fas fa-box-open"></i> Produits
+                        </div>
+                        <div class="card-body">
+                            <p><a class="admin-sidebar__link" href="{{ path('admin_product_index') }}">Liste des produits</a></p>
+                        </div>
+                    </article>
+
+                    <article class="card mb-2">
+                        <div class="card-header admin-sidebar__title">
+                        <i class="fas fa-shopping-cart"></i> Commandes
+                        </div>
+                        <div class="card-body">
+                            <p><a class="admin-sidebar__link" href="{{ path('admin_order_index') }}">Liste des commandes</a></p>
+                        </div>
+                    </article>
+
+                    <article class="card mb-2">
+                        <div class="card-header admin-sidebar__title">
+                        <i class="fas fa-shopping-basket"></i> Eléments de Commande
+                        </div>
+                        <div class="card-body">
+                            <p><a class="admin-sidebar__link" href="{{ path('admin_order_item_index') }}">Liste des éléments de commandes</a></p>
+                        </div>
+                    </article>
+                </aside>
