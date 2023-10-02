@@ -14,8 +14,8 @@ Lors du clone, il faut :
 - Vérifier le paramétrage du mailer dans le .env :
     MAILER_DSN=smtp://localhost:1025
 
-- Vérifier le paramétrage de la BD dans le .env : bwm
-- Vérifier le paramétrage de la BD dans le .prod : bwm_test
+- Vérifier le paramétrage de la BD dans le .env 
+- Vérifier le paramétrage de la BD dans le .prod 
 
 - Créer les BDs si elles n'existent pas dans votre serveur
 
